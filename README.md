@@ -1,3 +1,3 @@
-# C-ALGO
+# algorithm
 
-algorithm in C
+My algorithm base mainly host the implementation of algorithms.
