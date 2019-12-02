@@ -1,3 +1,3 @@
 # algorithm
 
-My algorithm base mainly host the implementation of algorithms.
+My algorithm base mainly hosts the implementation of algorithms.
