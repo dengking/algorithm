@@ -17,3 +17,54 @@
 
 这背后是算法和离散数学。
 
+
+
+# 循环次数的确定
+
+非常多的最终算法都能够形式化成循环的处理，可能会嵌套多层循环。当将算法形式化为循环后进行实现的时候，一个非常重要的问题就是循环语句的实现：
+
+- `for`语句一个非常重要的就是循环次数的确定，只有先确定好循环次数后，才能够写出正确的for循环
+- ``while`语句可能涉及到的有：
+  - 循环次数的确定
+  - 终止条件的确定
+
+
+
+下面以结合一些具体的算法来进行说明
+
+## naive string search
+
+Given a text `txt` and a pattern `pat`, prints all occurrences of `pat` in `txt`.
+
+这个问题最终是可以形式化为两次`for`循环的，要想写出正确的`for`语句第一个问题就是：在`txt`一共要`pat`将进行多少次匹配？
+
+其实回答这个问题并不是非常难，一个非常简单的技巧是进行**枚举**，我们可以从最最简单的情况进行枚举，设`txt`的长度是`txt_len`，`pat`的长度是`pat_len`：
+
+- `txt_len`为2， `pat_len`为1，显然要进行2次匹配
+- `txt_len`为4， `pat_len`为2，显然要进行3次匹配
+- `txt_len`为4， `pat_len`为3，显然要进行2次匹配
+
+
+
+显然要进行`txt_len - pat_len + 1`次匹配，所以第一层`for`循环就需要产生`txt_len - pat_len + 1`次循环。所以最终我们可以写出如下代码
+
+```python
+def brute_force_search(txt, pat):
+    """
+    Given a text txt and a pattern pat, prints all occurrences of pat in txt.
+    https://www.geeksforgeeks.org/naive-algorithm-for-pattern-searching/
+    :param txt:
+    :param pat:
+    :return:
+    """
+    txt_len = len(txt)
+    pat_len = len(pat)
+    for i in range(txt_len - pat_len + 1):
+        for j in range(pat_len):
+            if txt[i + j] != pat[j]:
+                break
+        if j == pat_len - 1:
+            print(txt[i:i + pat_len])
+        j = 0
+```
+

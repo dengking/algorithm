@@ -8,7 +8,7 @@ def brute_force_search(txt, pat):
     """
     txt_len = len(txt)
     pat_len = len(pat)
-    for i in range(txt_len - pat_len):
+    for i in range(txt_len - pat_len + 1):
         for j in range(pat_len):
             if txt[i + j] != pat[j]:
                 break
@@ -21,4 +21,4 @@ def brute_force_search(txt, pat):
 if __name__ == '__main__':
     txt = "AABAACAADAABAAABAA"
     pat = "AABA"
-    search(pat, txt)
+    brute_force_search(txt, pat)

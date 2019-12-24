@@ -1,0 +1,3 @@
+[TOC]
+
+# [Brute-force search](https://en.wikipedia.org/wiki/Brute-force_search)
