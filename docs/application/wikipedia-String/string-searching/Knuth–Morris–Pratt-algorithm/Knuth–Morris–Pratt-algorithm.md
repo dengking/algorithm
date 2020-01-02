@@ -494,7 +494,7 @@ The values `f(k)` are computed easily using **existing prefix overlap informatio
 
 
 
-According to the definition of f(k):
+According to the definition of `f(k)`:
 
 ![img](http://www.mathcs.emory.edu/~cheung/Courses/323/Syllabus/Text/FIGS/KMP/KMP23.gif)
 
@@ -619,7 +619,7 @@ We want to compute f(9) using f(8) , but now the next character does not match(t
 
 To find the maximum overlap, we must slide the prefix down and look for matching letters !!!
 
-> NOTE: 思路是使用已经匹配的字符串来尽可能减少匹配次数并且寻找第一个最可能的位置？
+> NOTE: 思路是使用已经匹配的字符串来尽可能减少匹配次数并且寻找第一个最可能的位置。
 
 Now, let us use only the matching prefix information:
 
@@ -735,54 +735,6 @@ In pseudo code:
 
 
 ## Algorithm to compute KMP failure function
-
-**Pseudo code:**
-
-```pseudocode
-   public static int[] KMP_failure_function( P )
-   {
-      int k, i, x, m;
-
-      int f[] = new int[P.length()];    // f[] stores the function values
-
-      m = P.length();
-
-      f[0] = 0;                 // f[0] is always 0...
-
-      for ( k = 1; k < m; k++ )
-      {
-         // Compute f(k) and store in f[k]
-
-	 i = k-1;               // Try use f(k-1) to compute f(k)
-	 x = f[i];		// Character position to match agains P[k]
-
-	 if ( P[k] == P[x] )    // Note: make sure x is valid
-         {
-	    f[k] = f[i] + 1;
-	    continue;           // Compute next f(k) value
-	 }
-	 else
-	 {
-	    i = x-1;            // Try next prefix (and next f(i)) to compute f(k)
-	    x = f[i];		// Character position to match agains P[k]
-	 }
-
-	 if ( P[k] == P[x] )    // Note: make sure x is valid
-         {
-	    f[k] = f[i] + 1;
-	    continue;           // Compute next f(k) value
-	 }
-	 else
-	 {
-	    i = x-1;            // Try next prefix (and next f(i)) to compute f(k)
-	    x = f[i];		// Character position to match agains P[k]
-	 }
-
-	 .... (obviously we will make this into a loop !!!)
-
-      }
-   }
-```
 
 **Java code:**
 
@@ -979,9 +931,72 @@ public class ComputeF
 
 
 
+# KMP实现分析
+
+通过上述三篇文章，能够知道KMP算法的原理，现在需要考虑的是如何来进行实现。
+
+## 计算KMP failure function的递归公式
+
+当`pattern[j]`与`pattern[f[j-1]]`不相等的时候，这个递归公式中涉及到了不断地循环递归，使用数学公式不方便描述，下面的python程序是非常简洁易懂的，并且是非常接近数学公式的，所以这里就省略掉递归公式。
+
+## 计算KMP failure function的python实现
+
+failure function `f(j)`表示的是从`pattern[0]`到`pattern[j]`的序列（显然这个序列的长度是`j+1`）的最长公共前缀后缀的长度，即`f(j)`所表示的是长度为`j+1`的序列的最长公共前缀后缀的长度。显然`f[0]==0`，因为长度为1的序列的最长前缀后缀的长度为0。所以，当已知序列的长度为`i`，来查询其最长公共前缀后缀的时候，使用的是`f(i-1)`。因为`i`表示的是长度，所以`pattern[i]`引用的是数组的第`i+1`个元素。
+
+```python
+def get_failure_array(pattern):
+    failure = [0] # 初始条件
+    i = 0 # f(j-1)的值，是已知的，需要注意的是，它的含义是长度
+    j = 1 # f(j)是未知的
+    while j < len(pattern):
+        if pattern[i] == pattern[j]:
+            i += 1
+        elif i > 0:
+            i = failure[i - 1]
+            continue
+        j += 1
+        failure.append(i)
+    return failure
+```
 
 
 
+## 计算KMP failure function 和 dynamic programming
+
+KMP的failure function的求解过程在在计算`f(k+1)`的时所依赖的`f(0),f(1)...,f(k)`都是通过查failure table而获得的，而不是重新计算，这其实就是动态规划算法的思想。
+
+
+
+## KMP的实现
+
+```python
+def kmp_search(pattern, text):
+    """
+
+    :param pattern:
+    :param text:
+    :return:
+    """
+    # 1) Construct the failure array
+    failure = get_failure_array(pattern)
+
+    # 2) Step through text searching for pattern
+    i, j = 0, 0  # index into text, pattern
+    while i < len(text):
+        if pattern[j] == text[i]:
+            if j == (len(pattern) - 1):
+                return True
+            j += 1
+        elif j > 0:
+            # if this is a prefix in our pattern
+            # just go back far enough to continue
+            j = failure[j - 1]
+            continue
+        i += 1
+    return False
+```
+
+思考：为什么`j = failure[j - 1]`？其实结合前面的例子就可以知道了，这里不再赘述。
 
 # KMP in leetcode
 

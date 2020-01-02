@@ -3,3 +3,14 @@
 - [Optimal substructure](https://en.wikipedia.org/wiki/Optimal_substructure)
 
 如果问题具有[Overlapping subproblems](https://en.wikipedia.org/wiki/Overlapping_subproblems)性质，则可以使用[Dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming)，否则可以直接使用[Greedy algorithm](https://en.wikipedia.org/wiki/Greedy_algorithm)。
+
+
+
+# TODO
+
+https://stackoverflow.com/questions/tagged/dynamic-programming?tab=Active
+
+
+
+## 序列问题与多条规划算法
+

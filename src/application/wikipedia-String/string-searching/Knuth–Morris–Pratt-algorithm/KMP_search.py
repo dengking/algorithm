@@ -1,21 +1,32 @@
-"""
-- https://www.cnblogs.com/yjiyjige/p/3263858.html
-"""
-
-
-def kmp_search(txt, pat):
+def kmp_search(pattern, text):
     """
 
-    :param txt:
-    :param pat:
+    :param pattern:
+    :param text:
     :return:
     """
-    pass
+    # 1) Construct the failure array
+    failure = get_failure_array(pattern)
+
+    # 2) Step through text searching for pattern
+    i, j = 0, 0  # index into text, pattern
+    while i < len(text):
+        if pattern[j] == text[i]:
+            if j == (len(pattern) - 1):
+                return True
+            j += 1
+        elif j > 0:
+            # if this is a prefix in our pattern
+            # just go back far enough to continue
+            j = failure[j - 1]
+            continue
+        i += 1
+    return False
 
 
 def get_failure_array(pattern):
     """
-    Calculates the new index we should go to if we fail a comparison
+    关于本函数的分析，参见对应文档
     :param pattern:
     :return:
     """

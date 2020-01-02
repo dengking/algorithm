@@ -32,6 +32,14 @@
 
 > Note that you can construct the (n + 1)-cube $Q_{n+1}$ from the n-cube $Q_n$ by making two copies of $Q_n$ , prefacing the labels on the vertices with a 0 in one copy of $Q_n$ and with a 1 in the other copy of $Q_n$ , and adding edges connecting two vertices that have labels differing only in the first bit. 
 
+
+
+## KMP failure function
+
+KMP failure function的计算也有赖于递归关系的建立，参见[Computing the KMP failure function (f(k))](http://www.mathcs.emory.edu/~cheung/Courses/323/Syllabus/Text/Matching-KMP2.html)。
+
+
+
 # one by one
 
 
