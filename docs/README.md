@@ -1,3 +1,16 @@
+[TOC]
+
+
+
+# 项目介绍
+
+本项目主要包含如下内容
+
+- recursion：学习算法，首先从递归开始
+- algorithm-design-paradigm：常用的算法设计paradigm
+- analysis-of-algorithms：算法分析
+- application：学习算法的目的是高效地解决问题，在本项目中，将这些问题统称为[Computational problem](https://en.wikipedia.org/wiki/Computational_problem)，在application中，收录了解决这些问题的高效算法
+
 
 
 

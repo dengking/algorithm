@@ -1,3 +1,5 @@
+# algorithm and math
+
 使用数学来描述算法，根据数学公式写出算法：
 
 - 递推公式
@@ -9,13 +11,26 @@
 书写递归公式的几个要素：
 
 - 初始条件
-- 递归关系
+- 递归关系，递归关系往往对应这如下几种情况：
+  - 新加一个元素
 
 《algorithm-DP-VS-最长公共子序列-VS-矩阵连乘问题-VS-最大子段和.md》
 
 在[Knuth–Morris–Pratt algorithm](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm)中对算法的描述：
 
 > The most straightforward algorithm, known as the "[Brute-force](https://en.wikipedia.org/wiki/Brute-force_search)" or "Naive" algorithm, is to look for a **word match** at each index `m`, the position in the string being searched, i.e. `S[m]`. At each position `m` the algorithm first checks for equality of the first character in the word being searched, i.e. `S[m] =? W[0]`. If a match is found, the algorithm tests the other characters in the word being searched by checking successive values of the word position index, `i`. The algorithm retrieves the character `W[i]` in the word being searched and checks for equality of the expression `S[m+i] =? W[i]`. If all successive characters match in `W` at position `m`, then a match is found at that position in the search string. If the index `m` reaches the end of the string then there is no match, in which case the search is said to "fail".
+
+
+
+
+
+## 递归公式
+
+## [n-Cubes](https://en.wikipedia.org/wiki/Hypercube)
+
+《Discrete Mathematics and Its Applications》的10.2 Graph Terminology and Special Types of Graphs中有这样的描述：
+
+> Note that you can construct the (n + 1)-cube $Q_{n+1}$ from the n-cube $Q_n$ by making two copies of $Q_n$ , prefacing the labels on the vertices with a 0 in one copy of $Q_n$ and with a 1 in the other copy of $Q_n$ , and adding edges connecting two vertices that have labels differing only in the first bit. 
 
 # one by one
 
