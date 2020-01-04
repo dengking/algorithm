@@ -12,8 +12,23 @@ suffix tree
 
 
 
-## suffix tree
+### suffix tree
 
 [Ukkonen's suffix tree algorithm in plain English](https://stackoverflow.com/questions/9452701/ukkonens-suffix-tree-algorithm-in-plain-english)
 
 https://stackoverflow.com/questions/tagged/suffix-tree?tab=Active
+
+
+
+### 使用编辑距离
+
+
+
+### 一种python实现
+
+```python
+def get_num_of_word_in_common(word1, word2):
+    """公共词的个数"""
+    return len(Counter(word1) & Counter(word2))
+```
+
