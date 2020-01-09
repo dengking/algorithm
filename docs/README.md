@@ -28,9 +28,15 @@
 
 那么如何来理解[combinatorial explosion](https://en.wikipedia.org/wiki/Combinatorial_explosion)呢？当我们使用  [backtracking](https://en.wikipedia.org/wiki/Backtracking) 的时候，就会出现[combinatorial explosion](https://en.wikipedia.org/wiki/Combinatorial_explosion)，从算法分析的角度来看，此时的算法复杂度就也会explosion。
 
+###  [backtracking](https://en.wikipedia.org/wiki/Backtracking) 的剪枝
 
+#### 方式一：
 
+https://leetcode-cn.com/problems/permutations-ii/solution/hui-su-suan-fa-python-dai-ma-java-dai-ma-by-liwe-2/
 
+#### 方式二：预测
+
+LL(1) parser，使用预测的方式来避免
 
 
 
