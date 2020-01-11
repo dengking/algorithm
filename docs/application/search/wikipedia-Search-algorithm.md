@@ -4,6 +4,8 @@
 
 # [Search algorithm](https://en.wikipedia.org/wiki/Search_algorithm)
 
+> NOTE: 这篇文章对search algorithm的描述是非常好的，尤其是对问题的分类
+
 In [computer science](https://en.wikipedia.org/wiki/Computer_science), a **search algorithm** is any [algorithm](https://en.wikipedia.org/wiki/Algorithm) which solves the [search problem](https://en.wikipedia.org/wiki/Search_problem), namely, to retrieve information stored within some data structure, or calculated in the [search space](https://en.wikipedia.org/wiki/Feasible_region)（可行域、解空间） of a [problem domain](https://en.wikipedia.org/wiki/Problem_domain), either with [discrete or continuous values](https://en.wikipedia.org/wiki/Continuous_or_discrete_variable). Specific applications of search algorithms include:
 
 - Problems in  [combinatorial optimization](https://en.wikipedia.org/wiki/Combinatorial_optimization) , such as:
@@ -31,11 +33,12 @@ In [computer science](https://en.wikipedia.org/wiki/Computer_science), a **searc
 
 - Checking to see if a given value is present in a set of values
 
-***SUMMARY*** : [Search algorithm](https://en.wikipedia.org/wiki/Search_algorithm)的一个主要问题就是确定[search space](https://en.wikipedia.org/wiki/Feasible_region)，本文中[search space](https://en.wikipedia.org/wiki/Feasible_region)所链接的文章所描述的其实是可行域，可行域的含义可能有些限制，但是也可以用；**search space**可能是virtual spaces（如backtracing在解空间中搜索）也可能是的确存在一个data structure（如二分搜索在一个sorted array中进行搜索）；正如下面会进行分类：
 
-- For virtual search spaces
-- For sub-structures of a given structure
-- Search for the maximum of a function
+
+> NOTE : [Search algorithm](https://en.wikipedia.org/wiki/Search_algorithm)的一个主要问题就是确定[search space](https://en.wikipedia.org/wiki/Feasible_region)，本文中[search space](https://en.wikipedia.org/wiki/Feasible_region)所链接的文章所描述的其实是可行域，可行域的含义可能有些限制，但是也可以用；**search space**可能是virtual spaces（如backtracing在解空间中搜索）也可能是的确存在一个data structure（如二分搜索在一个sorted array中进行搜索）；正如下面会进行分类：
+> - For virtual search spaces
+> - For sub-structures of a given structure
+> - Search for the maximum of a function
 
 
 
