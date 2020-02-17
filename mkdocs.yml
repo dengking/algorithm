@@ -57,6 +57,7 @@ nav:
     - Heuristic(computer-science): Algorithm-design-paradigm/Heuristic/Heuristic(computer-science).md
     - Heuristic-algorithms: Algorithm-design-paradigm/Heuristic/Heuristic-algorithms.md
     - Heuristic-algorithm-reading-list: Algorithm-design-paradigm/Heuristic/Heuristic-algorithm-reading-list.md
+  - Brute-force-VS-backtrack: Algorithm-design-paradigm/Brute-force-VS-backtrack.md
 - Analysis-of-algorithms:
   - Introduction: Analysis-of-algorithms/index.md
   - Combinatorial-explosion: Analysis-of-algorithms/Combinatorial-explosion.md
