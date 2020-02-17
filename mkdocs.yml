@@ -1,0 +1,87 @@
+edit_uri: ''
+extra_css:
+- css/extra.css
+google_analytics:
+- UA-27795084-5
+- mkdocs.org
+markdown_extensions:
+- toc:
+    baselevel: 1
+    permalink: '#'
+    separator: _
+nav:
+- Home: index.md
+- Recursion:
+  - Introduction: recursion/index.md
+  - Recursion(computer-science): recursion/Recursion(computer-science).md
+  - Recurrence-relation: recursion/Recurrence-relation.md
+  - Tower-of-Hanoi: recursion/Tower-of-Hanoi.md
+  - Structural-induction: recursion/Structural-induction.md
+  - VS-structural-recursion-VS-generative-recursion: recursion/VS-structural-recursion-VS-generative-recursion.md
+  - Corecursion: recursion/Corecursion.md
+  - VS-recursion-VS-corecursion: recursion/VS-recursion-VS-corecursion.md
+  - Recursion-to-iteration: recursion/Recursion-to-iteration.md
+  - Recursion-analysis-and-representation: recursion/Recursion-analysis-and-representation.md
+- Algorithm-design-paradigm:
+  - Introduction: Algorithm-design-paradigm/index.md
+  - Brute-force:
+    - Brute-force-search: Algorithm-design-paradigm/00-Brute-force/Brute-force-search.md
+  - Divide-and-Conquer:
+    - Divide-and-conquer-algorithm: Algorithm-design-paradigm/01-Divide-and-Conquer/Divide-and-conquer-algorithm.md
+  - Dynamic-Programming&Greedy-Algorithm:
+    - Introduction: Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/index.md
+    - Optimal-substructure: Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Optimal-substructure.md
+    - Bellman-equation: Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Bellman-equation.md
+    - Dynamic-Programming:
+      - Dynamic-programming: Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Dynamic-programming.md
+      - Overlapping-subproblems: Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Overlapping-subproblems.md
+      - "VS-\u6700\u957F\u516C\u5171\u5B50\u5E8F\u5217-VS-\u77E9\u9635\u8FDE\u4E58\u95EE\u9898-VS-\u6700\u5927\u5B50\u6BB5\u548C": "Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/VS-\u6700\
+          \u957F\u516C\u5171\u5B50\u5E8F\u5217-VS-\u77E9\u9635\u8FDE\u4E58\u95EE\u9898\
+          -VS-\u6700\u5927\u5B50\u6BB5\u548C.md"
+      - Catalan: Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Catalan.md
+      - Reading-list: Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Reading-list.md
+    - Greedy-algorithm:
+      - Greedy-algorithm: Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Greedy-algorithm/Greedy-algorithm.md
+      - Huffman-Coding: Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Greedy-algorithm/Huffman-Coding.md
+      - Reading-list: Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Greedy-algorithm/Reading-list.md
+    - Optimization-summary: Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Optimization-summary.md
+    - Dynamic-programming-VS-search-algorithm-VS-greedy-algorithm: Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-programming-VS-search-algorithm-VS-greedy-algorithm.md
+  - Backtracking:
+    - Backtracking: Algorithm-design-paradigm/05-Backtracking/Backtracking.md
+    - Sudoku-solving-algorithms: Algorithm-design-paradigm/05-Backtracking/Sudoku-solving-algorithms.md
+    - Reading-list: Algorithm-design-paradigm/05-Backtracking/Reading-list.md
+  - Branch-and-Bound-Algorithm:
+    - Branch-and-bound: Algorithm-design-paradigm/06-Branch-and-Bound-Algorithm/Branch-and-bound.md
+    - Branch-and-cut: Algorithm-design-paradigm/06-Branch-and-Bound-Algorithm/Branch-and-cut.md
+  - Heuristic:
+    - Heuristic(computer-science): Algorithm-design-paradigm/Heuristic/Heuristic(computer-science).md
+    - Heuristic-algorithms: Algorithm-design-paradigm/Heuristic/Heuristic-algorithms.md
+    - Heuristic-algorithm-reading-list: Algorithm-design-paradigm/Heuristic/Heuristic-algorithm-reading-list.md
+- Analysis-of-algorithms:
+  - Introduction: Analysis-of-algorithms/index.md
+  - Combinatorial-explosion: Analysis-of-algorithms/Combinatorial-explosion.md
+- Algorithm-and-math: Algorithm-and-math.md
+- Application:
+  - Computational-problem: Application/Computational-problem.md
+  - Search:
+    - Search-algorithm: Application/search/Search-algorithm.md
+    - Graph-and-tree-search-algorithm:
+      - A-star-search-algorithm: Application/search/Graph-and-tree-search-algorithm/A-star-search-algorithm.md
+      - B-star-search-algorithm: Application/search/Graph-and-tree-search-algorithm/B-star-search-algorithm.md
+      - Beam-search: Application/search/Graph-and-tree-search-algorithm/Beam-search.md
+      - Iterative-deepening-depth-first-search: Application/search/Graph-and-tree-search-algorithm/Iterative-deepening-depth-first-search.md
+  - Sorting:
+    - Introduction: Application/sorting/index.md
+    - Merge-sort:
+      - Merge-sort: Application/sorting/merge-sorts/Merge-sort.md
+      - Merge-algorithm: Application/sorting/merge-sorts/Merge-algorithm.md
+      - K-way-merge-algorithm: Application/sorting/merge-sorts/k-way-merge-algorithm.md
+plugins:
+- search
+repo_url: https://github.com/dengking/data-structure
+site_author: DengKing
+site_description: Project documentation with Markdown.
+site_name: data-structure
+site_url: https://dengking.github.io/data-structure
+theme:
+  name: material
