@@ -1,0 +1,1355 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Project documentation with Markdown.">
+      
+      
+        <link rel="canonical" href="https://dengking.github.io/algorithm/Application/wikipedia-Parsing-algorithms/Bottom-up/wikipedia-LR-parser/">
+      
+      
+        <meta name="author" content="DengKing">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>wikipedia LR parser - algorithm</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/application.1b62728e.css">
+      
+      
+    
+    
+      <script src="../../../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../../css/extra.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-27795084-5", "mkdocs.org")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#lr_parser" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://dengking.github.io/algorithm" title="algorithm" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              algorithm
+            </span>
+            <span class="md-header-nav__topic">
+              
+                wikipedia LR parser
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/dengking/algorithm" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://dengking.github.io/algorithm" title="algorithm" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    algorithm
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/dengking/algorithm" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Recursion
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Recursion
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../recursion/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../recursion/Recursion(computer-science)/" title="Recursion(computer-science)" class="md-nav__link">
+      Recursion(computer-science)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../recursion/Recurrence-relation/" title="Recurrence-relation" class="md-nav__link">
+      Recurrence-relation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../recursion/Tower-of-Hanoi/" title="Tower-of-Hanoi" class="md-nav__link">
+      Tower-of-Hanoi
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../recursion/Structural-induction/" title="Structural-induction" class="md-nav__link">
+      Structural-induction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../recursion/VS-structural-recursion-VS-generative-recursion/" title="VS-structural-recursion-VS-generative-recursion" class="md-nav__link">
+      VS-structural-recursion-VS-generative-recursion
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../recursion/Corecursion/" title="Corecursion" class="md-nav__link">
+      Corecursion
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../recursion/VS-recursion-VS-corecursion/" title="VS-recursion-VS-corecursion" class="md-nav__link">
+      VS-recursion-VS-corecursion
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../recursion/Recursion-to-iteration.md" title="Recursion-to-iteration" class="md-nav__link">
+      Recursion-to-iteration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../recursion/Recursion-analysis-and-representation.md" title="Recursion-analysis-and-representation" class="md-nav__link">
+      Recursion-analysis-and-representation
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Algorithm-design-paradigm
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Algorithm-design-paradigm
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2">
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Brute-force
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        Brute-force
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/00-Brute-force/Brute-force-search/" title="Brute-force-search" class="md-nav__link">
+      Brute-force-search
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-3" type="checkbox" id="nav-3-3">
+    
+    <label class="md-nav__link" for="nav-3-3">
+      Divide-and-Conquer
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-3">
+        Divide-and-Conquer
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/01-Divide-and-Conquer/Divide-and-conquer-algorithm/" title="Divide-and-conquer-algorithm" class="md-nav__link">
+      Divide-and-conquer-algorithm
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Dynamic-Programming&Greedy-Algorithm
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        Dynamic-Programming&Greedy-Algorithm
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Optimal-substructure/" title="Optimal-substructure" class="md-nav__link">
+      Optimal-substructure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Bellman-equation/" title="Bellman-equation" class="md-nav__link">
+      Bellman-equation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4-4" type="checkbox" id="nav-3-4-4">
+    
+    <label class="md-nav__link" for="nav-3-4-4">
+      Dynamic-Programming
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-4-4">
+        Dynamic-Programming
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Dynamic-programming/" title="Dynamic-programming" class="md-nav__link">
+      Dynamic-programming
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Overlapping-subproblems/" title="Overlapping-subproblems" class="md-nav__link">
+      Overlapping-subproblems
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/VS-最长公共子序列-VS-矩阵连乘问题-VS-最大子段和/" title="VS-最长公共子序列-VS-矩阵连乘问题-VS-最大子段和" class="md-nav__link">
+      VS-最长公共子序列-VS-矩阵连乘问题-VS-最大子段和
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Catalan/" title="Catalan" class="md-nav__link">
+      Catalan
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Reading-list/" title="Reading-list" class="md-nav__link">
+      Reading-list
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4-5" type="checkbox" id="nav-3-4-5">
+    
+    <label class="md-nav__link" for="nav-3-4-5">
+      Greedy-algorithm
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-4-5">
+        Greedy-algorithm
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Greedy-algorithm/Greedy-algorithm/" title="Greedy-algorithm" class="md-nav__link">
+      Greedy-algorithm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Greedy-algorithm/Huffman-Coding/" title="Huffman-Coding" class="md-nav__link">
+      Huffman-Coding
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Greedy-algorithm/Reading-list/" title="Reading-list" class="md-nav__link">
+      Reading-list
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Optimization-summary.md" title="Optimization-summary" class="md-nav__link">
+      Optimization-summary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-programming-VS-search-algorithm-VS-greedy-algorithm/" title="Dynamic-programming-VS-search-algorithm-VS-greedy-algorithm" class="md-nav__link">
+      Dynamic-programming-VS-search-algorithm-VS-greedy-algorithm
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5" type="checkbox" id="nav-3-5">
+    
+    <label class="md-nav__link" for="nav-3-5">
+      Backtracking
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-5">
+        Backtracking
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/05-Backtracking/Backtracking/" title="Backtracking" class="md-nav__link">
+      Backtracking
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/05-Backtracking/Sudoku-solving-algorithms/" title="Sudoku-solving-algorithms" class="md-nav__link">
+      Sudoku-solving-algorithms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/05-Backtracking/Reading-list/" title="Reading-list" class="md-nav__link">
+      Reading-list
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-6" type="checkbox" id="nav-3-6">
+    
+    <label class="md-nav__link" for="nav-3-6">
+      Branch-and-Bound-Algorithm
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-6">
+        Branch-and-Bound-Algorithm
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/06-Branch-and-Bound-Algorithm/Branch-and-bound/" title="Branch-and-bound" class="md-nav__link">
+      Branch-and-bound
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/06-Branch-and-Bound-Algorithm/Branch-and-cut/" title="Branch-and-cut" class="md-nav__link">
+      Branch-and-cut
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-7" type="checkbox" id="nav-3-7">
+    
+    <label class="md-nav__link" for="nav-3-7">
+      Heuristic
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-7">
+        Heuristic
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/Heuristic/Heuristic(computer-science)/" title="Heuristic(computer-science)" class="md-nav__link">
+      Heuristic(computer-science)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/Heuristic/Heuristic-algorithms/" title="Heuristic-algorithms" class="md-nav__link">
+      Heuristic-algorithms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/Heuristic/Heuristic-algorithm-reading-list/" title="Heuristic-algorithm-reading-list" class="md-nav__link">
+      Heuristic-algorithm-reading-list
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-design-paradigm/Brute-force-VS-backtrack/" title="Brute-force-VS-backtrack" class="md-nav__link">
+      Brute-force-VS-backtrack
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Analysis-of-algorithms
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Analysis-of-algorithms
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Analysis-of-algorithms/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Analysis-of-algorithms/Combinatorial-explosion/" title="Combinatorial-explosion" class="md-nav__link">
+      Combinatorial-explosion
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../../Algorithm-and-math.md" title="Algorithm-and-math" class="md-nav__link">
+      Algorithm-and-math
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Application
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Application
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../Computational-problem/" title="Computational-problem" class="md-nav__link">
+      Computational-problem
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2" type="checkbox" id="nav-6-2">
+    
+    <label class="md-nav__link" for="nav-6-2">
+      Search
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-2">
+        Search
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../search/Search-algorithm/" title="Search-algorithm" class="md-nav__link">
+      Search-algorithm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-2-2" type="checkbox" id="nav-6-2-2">
+    
+    <label class="md-nav__link" for="nav-6-2-2">
+      Graph-and-tree-search-algorithm
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-6-2-2">
+        Graph-and-tree-search-algorithm
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../search/Graph-and-tree-search-algorithm/A-star-search-algorithm/" title="A-star-search-algorithm" class="md-nav__link">
+      A-star-search-algorithm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../search/Graph-and-tree-search-algorithm/B-star-search-algorithm/" title="B-star-search-algorithm" class="md-nav__link">
+      B-star-search-algorithm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../search/Graph-and-tree-search-algorithm/Beam-search/" title="Beam-search" class="md-nav__link">
+      Beam-search
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../search/Graph-and-tree-search-algorithm/Iterative-deepening-depth-first-search/" title="Iterative-deepening-depth-first-search" class="md-nav__link">
+      Iterative-deepening-depth-first-search
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3" type="checkbox" id="nav-6-3">
+    
+    <label class="md-nav__link" for="nav-6-3">
+      Sorting
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-6-3">
+        Sorting
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../sorting/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6-3-2" type="checkbox" id="nav-6-3-2">
+    
+    <label class="md-nav__link" for="nav-6-3-2">
+      Merge-sort
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-6-3-2">
+        Merge-sort
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../sorting/merge-sorts/Merge-sort/" title="Merge-sort" class="md-nav__link">
+      Merge-sort
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../sorting/merge-sorts/Merge-algorithm/" title="Merge-algorithm" class="md-nav__link">
+      Merge-algorithm
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../sorting/merge-sorts/k-way-merge-algorithm/" title="K-way-merge-algorithm" class="md-nav__link">
+      K-way-merge-algorithm
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bottom-up_parse_tree_for_example_a2_1" class="md-nav__link">
+    Bottom-up parse tree for example A*2 + 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shift_and_reduce_actions" class="md-nav__link">
+    Shift and reduce actions
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <div class="toc">
+<ul>
+<li><a href="#lr_parser">LR parser</a><ul>
+<li><a href="#overview">Overview</a><ul>
+<li><a href="#bottom-up_parse_tree_for_example_a2_1">Bottom-up parse tree for example A*2 + 1</a></li>
+<li><a href="#shift_and_reduce_actions">Shift and reduce actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h1 id="lr_parser"><a href="https://en.wikipedia.org/wiki/LR_parser">LR parser</a><a class="headerlink" href="#lr_parser" title="Permanent link">#</a></h1>
+<p>In <a href="https://en.wikipedia.org/wiki/Computer_science">computer science</a>, <strong>LR parsers</strong> are a type of <a href="https://en.wikipedia.org/wiki/Bottom-up_parsing">bottom-up parser</a> that analyses <a href="https://en.wikipedia.org/wiki/Deterministic_context-free_language">deterministic context-free languages</a> in <strong>linear time</strong>. There are several variants of LR parsers: <a href="https://en.wikipedia.org/wiki/SLR_parser"><strong>SLR</strong> parsers</a>, <a href="https://en.wikipedia.org/wiki/LALR_parser"><strong>LALR</strong> parsers</a>, <a href="https://en.wikipedia.org/wiki/Canonical_LR_parser"><strong>Canonical LR(1)</strong> parsers</a>, <a href="https://en.wikipedia.org/wiki/Canonical_LR_parser"><strong>Minimal LR(1)</strong> parsers</a>, <a href="https://en.wikipedia.org/wiki/Generalized_LR_parser"><strong>GLR</strong> parsers</a>. LR parsers can be generated by a <a href="https://en.wikipedia.org/wiki/Parser_generator">parser generator</a> from a <a href="https://en.wikipedia.org/wiki/Formal_grammar">formal grammar</a> defining the syntax of the language to be parsed. They are widely used for the processing of <a href="https://en.wikipedia.org/wiki/Computer_language">computer languages</a>.</p>
+<p>An <strong>LR</strong> parser (<strong>L</strong>eft-to-right, <strong>R</strong>ightmost derivation in reverse) reads input text from left to right without backing up (this is true for most parsers), and produces a <a href="https://en.wikipedia.org/wiki/Rightmost_derivation">rightmost derivation</a> in reverse: it does a <a href="https://en.wikipedia.org/wiki/Bottom-up_parsing">bottom-up parse</a> - not a <a href="https://en.wikipedia.org/wiki/Top-down_parsing">top-down LL parse</a> or ad-hoc parse. The name LR is often followed by a numeric qualifier, as in <strong>LR(1)</strong> or sometimes <strong>LR(<em>k</em>)</strong>. To avoid <a href="https://en.wikipedia.org/wiki/Backtracking">backtracking</a> or guessing, the LR parser is allowed to peek ahead at <em>k</em> <a href="https://en.wikipedia.org/wiki/Parsing#Lookahead">lookahead</a> input <a href="https://en.wikipedia.org/wiki/Symbol_(formal)">symbols</a> before deciding how to parse earlier symbols. Typically <em>k</em> is 1 and is not mentioned. The name LR is often preceded by other qualifiers, as in <strong>SLR</strong> and <strong>LALR</strong>. The <strong>LR(<em>k</em>)</strong> condition for a grammar was suggested by Knuth to stand for "translatable from left to right with bound <em>k</em>."</p>
+<p>LR parsers are deterministic; they produce a single correct parse without guesswork or backtracking, in linear time. This is ideal for computer languages, but LR parsers are not suited for human languages which need more flexible but inevitably slower methods. Some methods which can parse arbitrary context-free languages (e.g., <a href="https://en.wikipedia.org/wiki/CYK_algorithm">Cocke–Younger–Kasami</a>, <a href="https://en.wikipedia.org/wiki/Earley_parser">Earley</a>, <a href="https://en.wikipedia.org/wiki/GLR_parser">GLR</a>) have worst-case performance of O(<em>n</em>3) time. Other methods which backtrack or yield multiple parses may even take exponential time when they guess badly.</p>
+<p>The above properties of <strong>L</strong>, <strong>R</strong>, and <strong>k</strong> are actually shared by all <a href="https://en.wikipedia.org/wiki/Shift-reduce_parser">shift-reduce parsers</a>, including <a href="https://en.wikipedia.org/wiki/Simple_precedence_parser">precedence parsers</a>. But by convention, the LR name stands for the form of parsing invented by <a href="https://en.wikipedia.org/wiki/Donald_Knuth">Donald Knuth</a>, and excludes the earlier, less powerful precedence methods (for example <a href="https://en.wikipedia.org/wiki/Operator-precedence_parser">Operator-precedence parser</a>).[<a href="https://en.wikipedia.org/wiki/LR_parser#cite_note-Knuth_1965-1">1]</a> LR parsers can handle a larger range of languages and grammars than precedence parsers or top-down <a href="https://en.wikipedia.org/wiki/LL_parsing">LL parsing</a>.[<a href="https://en.wikipedia.org/wiki/LR_parser#cite_note-3">3]</a> This is because the LR parser waits until it has seen an entire instance of some grammar pattern before committing to what it has found. An LL parser has to decide or guess what it is seeing much sooner, when it has only seen the leftmost input symbol of that pattern.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
+<h3 id="bottom-up_parse_tree_for_example_a2_1">Bottom-up parse tree for example A*2 + 1<a class="headerlink" href="#bottom-up_parse_tree_for_example_a2_1" title="Permanent link">#</a></h3>
+<p>An LR parser scans and parses the input text in one forward pass over the text. The parser builds up the <a href="https://en.wikipedia.org/wiki/Parse_tree">parse tree</a> incrementally, bottom up, and left to right, without guessing or backtracking. At every point in this pass, the parser has accumulated a list of subtrees or phrases of the input text that have been already parsed. Those subtrees are not yet joined together because the parser has not yet reached the right end of the syntax pattern that will combine them.</p>
+<p>At step 6 in an example parse, only "A<em>2" has been parsed, incompletely. Only the shaded lower-left corner of the parse tree exists. None of the parse tree nodes numbered 7 and above exist yet. Nodes 3, 4, and 6 are the roots of isolated subtrees for variable A, operator </em>, and number 2, respectively. These three root nodes are temporarily held in a <strong>parse stack</strong>. The remaining unparsed portion of the input stream is "+ 1".</p>
+<p><a href="https://en.wikipedia.org/wiki/File:Shift-Reduce_Parse_Steps_for_A*2%2B1.svg"><img alt="img" src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Shift-Reduce_Parse_Steps_for_A%2A2%2B1.svg/212px-Shift-Reduce_Parse_Steps_for_A%2A2%2B1.svg.png" /></a></p>
+<blockquote>
+<p>Bottom-up parse tree built in numbered steps</p>
+</blockquote>
+<h3 id="shift_and_reduce_actions">Shift and reduce actions<a class="headerlink" href="#shift_and_reduce_actions" title="Permanent link">#</a></h3>
+<p>As with other shift-reduce parsers, an LR parser works by doing some combination of Shift steps and Reduce steps.</p>
+<ul>
+<li>A <strong>Shift</strong> step advances in the input stream by one symbol. That shifted symbol becomes a new single-node parse tree.</li>
+<li>A <strong>Reduce</strong> step applies a completed grammar rule to some of the recent parse trees, joining them together as one tree with a new root symbol.</li>
+</ul>
+<p>If the input has no syntax errors, the parser continues with these steps until all of the input has been consumed and all of the parse trees have been reduced to a single tree representing an entire legal input.</p>
+<p>LR parsers differ from other shift-reduce parsers in how they decide when to reduce, and how to pick between rules with similar endings. But the final decisions and the sequence of shift or reduce steps are the same.</p>
+<p>Much of the LR parser's efficiency is from being deterministic. To avoid guessing, the LR parser often looks ahead (rightwards) at the next scanned symbol, before deciding what to do with previously scanned symbols. The lexical scanner works one or more symbols ahead of the parser. The <strong>lookahead</strong> symbols are the 'right-hand context' for the parsing decision.</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../../.."}})</script>
+      
+    
+  </body>
+</html>

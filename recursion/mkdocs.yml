@@ -1,0 +1,12 @@
+nav:
+    - Introduction: index.md
+    - Recursion(computer-science): Recursion(computer-science).md
+    - Recurrence-relation: Recurrence-relation.md
+    - Tower-of-Hanoi: Tower-of-Hanoi.md
+    - Structural-induction: Structural-induction.md
+    - VS-structural-recursion-VS-generative-recursion: VS-structural-recursion-VS-generative-recursion.md
+    - Corecursion: Corecursion.md
+    - VS-recursion-VS-corecursion: VS-recursion-VS-corecursion.md
+    - Recursion-to-iteration: Recursion-to-iteration.md
+    - Recursion-analysis-and-representation: Recursion-analysis-and-representation.md
+    
