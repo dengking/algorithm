@@ -79,10 +79,10 @@ nav:
       - K-way-merge-algorithm: Application/sorting/merge-sorts/k-way-merge-algorithm.md
 plugins:
 - search
-repo_url: https://github.com/dengking/data-structure
+repo_url: https://github.com/dengking/algorithm
 site_author: DengKing
 site_description: Project documentation with Markdown.
-site_name: data-structure
-site_url: https://dengking.github.io/data-structure
+site_name: algorithm
+site_url: https://dengking.github.io/algorithm
 theme:
   name: material

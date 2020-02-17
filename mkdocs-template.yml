@@ -1,10 +1,10 @@
-site_name: data-structure
-site_url: https://dengking.github.io/data-structure
+site_name: algorithm
+site_url: https://dengking.github.io/algorithm
 site_description: Project documentation with Markdown.
 site_author: DengKing
 
 
-repo_url: https://github.com/dengking/data-structure
+repo_url: https://github.com/dengking/algorithm
 
 edit_uri: ""
 
