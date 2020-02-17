@@ -49,6 +49,13 @@ nav:
   - Backtracking:
     - Backtracking: Algorithm-design-paradigm/05-Backtracking/Backtracking.md
     - Sudoku-solving-algorithms: Algorithm-design-paradigm/05-Backtracking/Sudoku-solving-algorithms.md
+    - Permutation-and-combination:
+      - Permutation: Algorithm-design-paradigm/05-Backtracking/Permutation-and-combination/Permutation.md
+      - Enum-permutation:
+        - Backtrack-enum-all-permutations-of-string: Algorithm-design-paradigm/05-Backtracking/Permutation-and-combination/Enum-permutation/Backtrack-enum-all-permutations-of-string.md
+        - Enum-distinct-permutation-of-with-duplicate: Algorithm-design-paradigm/05-Backtracking/Permutation-and-combination/Enum-permutation/Enum-distinct-permutation-of-with-duplicate.md
+        - Enum-permutation-reading-list: Algorithm-design-paradigm/05-Backtracking/Permutation-and-combination/Enum-permutation/Enum-permutation-reading-list.md
+      - Reading-list: Algorithm-design-paradigm/05-Backtracking/Permutation-and-combination/Reading-list.md
     - Reading-list: Algorithm-design-paradigm/05-Backtracking/Reading-list.md
   - Branch-and-Bound-Algorithm:
     - Branch-and-bound: Algorithm-design-paradigm/06-Branch-and-Bound-Algorithm/Branch-and-bound.md
