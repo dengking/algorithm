@@ -40,7 +40,7 @@ KMP failure function的计算也有赖于递归关系的建立，参见[Computin
 
 
 
-# one by one
+## one by one
 
 
 
@@ -55,7 +55,7 @@ KMP failure function的计算也有赖于递归关系的建立，参见[Computin
 
 
 
-## 循环次数的确定
+### 循环次数的确定
 
 按照one by one的思路，非常多的算法最终都能够形式化成循环的处理，可能会嵌套多层循环。当将算法形式化为循环后进行实现的时候，一个非常重要的问题就是循环语句的实现：
 
@@ -106,7 +106,7 @@ def brute_force_search(txt, pat):
 
 
 
-# 建立递归关系
+## 建立递归关系
 
 KMP算法也存在递归关系。
 

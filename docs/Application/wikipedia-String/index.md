@@ -1,4 +1,8 @@
-# TODO
+# 关于本章
+
+本章讲述与字符串相关的算法。
+
+
 
 ## algorithm to judge whether two string has substring in common 
 
