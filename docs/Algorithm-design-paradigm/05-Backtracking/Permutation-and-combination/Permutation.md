@@ -1,7 +1,3 @@
-[TOC]
-
-
-
 # [Permutation](https://en.wikipedia.org/wiki/Permutation#Algorithms_to_generate_permutations)
 
 
