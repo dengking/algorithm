@@ -6,3 +6,4 @@ nav:
     - Backtracking: 05-Backtracking
     - Branch-and-Bound-Algorithm: 06-Branch-and-Bound-Algorithm
     - Heuristic: Heuristic
+    - Brute-force-VS-backtrack: Brute-force-VS-backtrack.md
