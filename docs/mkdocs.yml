@@ -1,2 +1,4 @@
 nav:
-    Home: index.md
+    - Home: index.md
+    - Algorithm-design-paradigm: Algorithm-design-paradigm
+    - Analysis-of-algorithms: Analysis-of-algorithms
