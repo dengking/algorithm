@@ -1,3 +1,5 @@
 nav:
     - Introduction: index.md
     - Optimal-substructure: Optimal-substructure.md
+    
+    - Optimization-summary: Optimization-summary.md
