@@ -1,14 +1,12 @@
-[TOC]
+# VS
 
-
-
-# 动态规划VS贪心算法
+## 动态规划VS贪心算法
 
 两者之间的共同点是[Optimal substructure](https://en.wikipedia.org/wiki/Optimal_substructure)；如果具有[Overlapping subproblems](https://en.wikipedia.org/wiki/Overlapping_subproblems)，则使用 [dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming) ，否则使用 [greedy algorithm](https://en.wikipedia.org/wiki/Greedy_algorithm) ；这个观点在[Optimal substructure](https://en.wikipedia.org/wiki/Optimal_substructure)中给出了； 
 
 
 
-# 动态规划算法与搜索算法比较分析
+## 动态规划算法与搜索算法比较分析
 
 无论是**动态规划算法**抑或是**基于递归的搜索算法**，他们的实现接依赖于**递归关系**的建立因此建立正确的**递归关系**是解决问题的核心所在。
 
@@ -22,5 +20,5 @@
 
 **搜索算法**对**递归关系**的处理是**由左向右**的因此他是**由顶向下**进行计算的；**动态规划算法**对**递归关系**的处理是**由右向左**的因此他的计算是**由底向上**的；无论是**动态规划算法**抑或是**回溯法**他们接依赖于递归表达式的建立两种算法对递归表达式提供了不同的实现方式显然。是实现采用的是更加纯粹的递归方式他借助于系统站来逐步分解直到最小子问题而动态规划算法则完全是由程序的语言来安排计算此问题的次序。D安排数组和变亮来保存计算的子问题的结果我猜想应该是先有回肃反然后才有了针对回溯发进行改进的更加灵活的动态规划算法。
 
-# 动态规划VS回溯法VS分支限界法VS贪心算法
+## 动态规划VS回溯法VS分支限界法VS贪心算法
 动态规划、回溯法、分支限界法都尝试在问题的解空间中选取最优解，而贪心算法则不同，它不断地选取当前最优解。

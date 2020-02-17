@@ -3,3 +3,4 @@ nav:
     - Optimal-substructure: Optimal-substructure.md
     
     - Optimization-summary: Optimization-summary.md
+    - Dynamic-programming-VS-search-algorithm-VS-greedy-algorithm: Dynamic-programming-VS-search-algorithm-VS-greedy-algorithm.md
