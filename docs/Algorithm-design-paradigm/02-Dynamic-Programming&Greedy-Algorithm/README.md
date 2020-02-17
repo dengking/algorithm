@@ -1,3 +1,5 @@
+# 关于本章
+
 动态规划算法和贪心算法比较类似，两者都用于解决optimization问题/最值问题，因为能够用这两种算法解决的问题具有相同的性质：
 
 - [Optimal substructure](https://en.wikipedia.org/wiki/Optimal_substructure)
@@ -6,11 +8,9 @@
 
 
 
-# TODO
+## TODO
 
 https://stackoverflow.com/questions/tagged/dynamic-programming?tab=Active
 
-
-
-## 序列问题与多条规划算法
+序列问题与多条规划算法
 
