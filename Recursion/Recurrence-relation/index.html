@@ -13,7 +13,7 @@
         <meta name="description" content="Project documentation with Markdown.">
       
       
-        <link rel="canonical" href="https://dengking.github.io/algorithm/algorithm-and-math/">
+        <link rel="canonical" href="https://dengking.github.io/algorithm/Recursion/Recurrence-relation/">
       
       
         <meta name="author" content="DengKing">
@@ -37,21 +37,21 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
-        <title>algorithm and math - algorithm</title>
+        <title>Recurrence-relation - algorithm</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
       
       
     
     
-      <script src="../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
@@ -60,10 +60,10 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
-      <link rel="stylesheet" href="../css/extra.css">
+      <link rel="stylesheet" href="../../css/extra.css">
     
     
       
@@ -110,7 +110,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#algorithm_and_math" tabindex="1" class="md-skip">
+      <a href="#recurrence_relation" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -136,7 +136,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                algorithm and math
+                Recurrence-relation
               
             </span>
           
@@ -247,7 +247,7 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -257,10 +257,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Recursion
@@ -278,7 +280,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../recursion/" title="Introduction" class="md-nav__link">
+    <a href="../" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -290,7 +292,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../recursion/Recursion(computer-science)/" title="Recursion(computer-science)" class="md-nav__link">
+    <a href="../Recursion(computer-science)/" title="Recursion(computer-science)" class="md-nav__link">
       Recursion(computer-science)
     </a>
   </li>
@@ -300,11 +302,69 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../recursion/Recurrence-relation/" title="Recurrence-relation" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Recurrence-relation
+      </label>
+    
+    <a href="./" title="Recurrence-relation" class="md-nav__link md-nav__link--active">
       Recurrence-relation
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    Definition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#factorial" class="md-nav__link">
+    Factorial
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -314,7 +374,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../recursion/Tower-of-Hanoi/" title="Tower-of-Hanoi" class="md-nav__link">
+    <a href="../Tower-of-Hanoi/" title="Tower-of-Hanoi" class="md-nav__link">
       Tower-of-Hanoi
     </a>
   </li>
@@ -326,7 +386,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../recursion/Structural-induction/" title="Structural-induction" class="md-nav__link">
+    <a href="../Structural-induction/" title="Structural-induction" class="md-nav__link">
       Structural-induction
     </a>
   </li>
@@ -338,7 +398,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../recursion/VS-structural-recursion-VS-generative-recursion/" title="VS-structural-recursion-VS-generative-recursion" class="md-nav__link">
+    <a href="../VS-structural-recursion-VS-generative-recursion/" title="VS-structural-recursion-VS-generative-recursion" class="md-nav__link">
       VS-structural-recursion-VS-generative-recursion
     </a>
   </li>
@@ -350,7 +410,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../recursion/Corecursion/" title="Corecursion" class="md-nav__link">
+    <a href="../Corecursion/" title="Corecursion" class="md-nav__link">
       Corecursion
     </a>
   </li>
@@ -362,7 +422,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../recursion/VS-recursion-VS-corecursion/" title="VS-recursion-VS-corecursion" class="md-nav__link">
+    <a href="../VS-recursion-VS-corecursion/" title="VS-recursion-VS-corecursion" class="md-nav__link">
       VS-recursion-VS-corecursion
     </a>
   </li>
@@ -374,7 +434,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../recursion/Recursion-to-iteration.md" title="Recursion-to-iteration" class="md-nav__link">
+    <a href="../Recursion-to-iteration/" title="Recursion-to-iteration" class="md-nav__link">
       Recursion-to-iteration
     </a>
   </li>
@@ -386,7 +446,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../recursion/Recursion-analysis-and-representation.md" title="Recursion-analysis-and-representation" class="md-nav__link">
+    <a href="../Recursion-analysis-and-representation/" title="Recursion-analysis-and-representation" class="md-nav__link">
       Recursion-analysis-and-representation
     </a>
   </li>
@@ -422,7 +482,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/" title="Introduction" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -453,7 +513,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/00-Brute-force/Brute-force-search/" title="Brute-force-search" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/00-Brute-force/Brute-force-search/" title="Brute-force-search" class="md-nav__link">
       Brute-force-search
     </a>
   </li>
@@ -489,7 +549,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/01-Divide-and-Conquer/Divide-and-conquer-algorithm/" title="Divide-and-conquer-algorithm" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/01-Divide-and-Conquer/Divide-and-conquer-algorithm/" title="Divide-and-conquer-algorithm" class="md-nav__link">
       Divide-and-conquer-algorithm
     </a>
   </li>
@@ -525,7 +585,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/" title="Introduction" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -537,7 +597,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Optimal-substructure/" title="Optimal-substructure" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Optimal-substructure/" title="Optimal-substructure" class="md-nav__link">
       Optimal-substructure
     </a>
   </li>
@@ -549,7 +609,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Bellman-equation/" title="Bellman-equation" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Bellman-equation/" title="Bellman-equation" class="md-nav__link">
       Bellman-equation
     </a>
   </li>
@@ -580,7 +640,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Dynamic-programming/" title="Dynamic-programming" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Dynamic-programming/" title="Dynamic-programming" class="md-nav__link">
       Dynamic-programming
     </a>
   </li>
@@ -592,7 +652,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Overlapping-subproblems/" title="Overlapping-subproblems" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Overlapping-subproblems/" title="Overlapping-subproblems" class="md-nav__link">
       Overlapping-subproblems
     </a>
   </li>
@@ -604,7 +664,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/VS-最长公共子序列-VS-矩阵连乘问题-VS-最大子段和/" title="VS-最长公共子序列-VS-矩阵连乘问题-VS-最大子段和" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/VS-最长公共子序列-VS-矩阵连乘问题-VS-最大子段和/" title="VS-最长公共子序列-VS-矩阵连乘问题-VS-最大子段和" class="md-nav__link">
       VS-最长公共子序列-VS-矩阵连乘问题-VS-最大子段和
     </a>
   </li>
@@ -616,7 +676,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Catalan/" title="Catalan" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Catalan/" title="Catalan" class="md-nav__link">
       Catalan
     </a>
   </li>
@@ -628,7 +688,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Reading-list/" title="Reading-list" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Reading-list/" title="Reading-list" class="md-nav__link">
       Reading-list
     </a>
   </li>
@@ -664,7 +724,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Greedy-algorithm/Greedy-algorithm/" title="Greedy-algorithm" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Greedy-algorithm/Greedy-algorithm/" title="Greedy-algorithm" class="md-nav__link">
       Greedy-algorithm
     </a>
   </li>
@@ -676,7 +736,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Greedy-algorithm/Huffman-Coding/" title="Huffman-Coding" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Greedy-algorithm/Huffman-Coding/" title="Huffman-Coding" class="md-nav__link">
       Huffman-Coding
     </a>
   </li>
@@ -688,7 +748,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Greedy-algorithm/Reading-list/" title="Reading-list" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Greedy-algorithm/Reading-list/" title="Reading-list" class="md-nav__link">
       Reading-list
     </a>
   </li>
@@ -705,7 +765,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Optimization-summary.md" title="Optimization-summary" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Optimization-summary/" title="Optimization-summary" class="md-nav__link">
       Optimization-summary
     </a>
   </li>
@@ -717,7 +777,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-programming-VS-search-algorithm-VS-greedy-algorithm/" title="Dynamic-programming-VS-search-algorithm-VS-greedy-algorithm" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-programming-VS-search-algorithm-VS-greedy-algorithm/" title="Dynamic-programming-VS-search-algorithm-VS-greedy-algorithm" class="md-nav__link">
       Dynamic-programming-VS-search-algorithm-VS-greedy-algorithm
     </a>
   </li>
@@ -753,7 +813,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/05-Backtracking/Backtracking/" title="Backtracking" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/05-Backtracking/Backtracking/" title="Backtracking" class="md-nav__link">
       Backtracking
     </a>
   </li>
@@ -765,7 +825,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/05-Backtracking/Sudoku-solving-algorithms/" title="Sudoku-solving-algorithms" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/05-Backtracking/Sudoku-solving-algorithms/" title="Sudoku-solving-algorithms" class="md-nav__link">
       Sudoku-solving-algorithms
     </a>
   </li>
@@ -776,8 +836,116 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5-3" type="checkbox" id="nav-3-5-3">
+    
+    <label class="md-nav__link" for="nav-3-5-3">
+      Permutation-and-combination
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-5-3">
+        Permutation-and-combination
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/05-Backtracking/Reading-list/" title="Reading-list" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/05-Backtracking/Permutation-and-combination/Permutation/" title="Permutation" class="md-nav__link">
+      Permutation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-5-3-2" type="checkbox" id="nav-3-5-3-2">
+    
+    <label class="md-nav__link" for="nav-3-5-3-2">
+      Enum-permutation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-3-5-3-2">
+        Enum-permutation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Algorithm-design-paradigm/05-Backtracking/Permutation-and-combination/Enum-permutation/Backtrack-enum-all-permutations-of-string/" title="Backtrack-enum-all-permutations-of-string" class="md-nav__link">
+      Backtrack-enum-all-permutations-of-string
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Algorithm-design-paradigm/05-Backtracking/Permutation-and-combination/Enum-permutation/Enum-distinct-permutation-of-with-duplicate/" title="Enum-distinct-permutation-of-with-duplicate" class="md-nav__link">
+      Enum-distinct-permutation-of-with-duplicate
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Algorithm-design-paradigm/05-Backtracking/Permutation-and-combination/Enum-permutation/Enum-permutation-reading-list/" title="Enum-permutation-reading-list" class="md-nav__link">
+      Enum-permutation-reading-list
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Algorithm-design-paradigm/05-Backtracking/Permutation-and-combination/Reading-list/" title="Reading-list" class="md-nav__link">
+      Reading-list
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../Algorithm-design-paradigm/05-Backtracking/Reading-list/" title="Reading-list" class="md-nav__link">
       Reading-list
     </a>
   </li>
@@ -813,7 +981,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/06-Branch-and-Bound-Algorithm/Branch-and-bound/" title="Branch-and-bound" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/06-Branch-and-Bound-Algorithm/Branch-and-bound/" title="Branch-and-bound" class="md-nav__link">
       Branch-and-bound
     </a>
   </li>
@@ -825,7 +993,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/06-Branch-and-Bound-Algorithm/Branch-and-cut/" title="Branch-and-cut" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/06-Branch-and-Bound-Algorithm/Branch-and-cut/" title="Branch-and-cut" class="md-nav__link">
       Branch-and-cut
     </a>
   </li>
@@ -861,7 +1029,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/Heuristic/Heuristic(computer-science)/" title="Heuristic(computer-science)" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/Heuristic/Heuristic(computer-science)/" title="Heuristic(computer-science)" class="md-nav__link">
       Heuristic(computer-science)
     </a>
   </li>
@@ -873,7 +1041,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/Heuristic/Heuristic-algorithms/" title="Heuristic-algorithms" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/Heuristic/Heuristic-algorithms/" title="Heuristic-algorithms" class="md-nav__link">
       Heuristic-algorithms
     </a>
   </li>
@@ -885,7 +1053,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/Heuristic/Heuristic-algorithm-reading-list/" title="Heuristic-algorithm-reading-list" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/Heuristic/Heuristic-algorithm-reading-list/" title="Heuristic-algorithm-reading-list" class="md-nav__link">
       Heuristic-algorithm-reading-list
     </a>
   </li>
@@ -902,7 +1070,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-design-paradigm/Brute-force-VS-backtrack/" title="Brute-force-VS-backtrack" class="md-nav__link">
+    <a href="../../Algorithm-design-paradigm/Brute-force-VS-backtrack/" title="Brute-force-VS-backtrack" class="md-nav__link">
       Brute-force-VS-backtrack
     </a>
   </li>
@@ -938,7 +1106,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Analysis-of-algorithms/" title="Introduction" class="md-nav__link">
+    <a href="../../Analysis-of-algorithms/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -950,7 +1118,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Analysis-of-algorithms/Combinatorial-explosion/" title="Combinatorial-explosion" class="md-nav__link">
+    <a href="../../Analysis-of-algorithms/Combinatorial-explosion/" title="Combinatorial-explosion" class="md-nav__link">
       Combinatorial-explosion
     </a>
   </li>
@@ -967,7 +1135,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Algorithm-and-math.md" title="Algorithm-and-math" class="md-nav__link">
+    <a href="../../Algorithm-and-math/" title="Algorithm-and-math" class="md-nav__link">
       Algorithm-and-math
     </a>
   </li>
@@ -998,7 +1166,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Application/Computational-problem/" title="Computational-problem" class="md-nav__link">
+    <a href="../../Application/Computational-problem/" title="Computational-problem" class="md-nav__link">
       Computational-problem
     </a>
   </li>
@@ -1029,7 +1197,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Application/search/Search-algorithm/" title="Search-algorithm" class="md-nav__link">
+    <a href="../../Application/search/Search-algorithm/" title="Search-algorithm" class="md-nav__link">
       Search-algorithm
     </a>
   </li>
@@ -1060,7 +1228,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Application/search/Graph-and-tree-search-algorithm/A-star-search-algorithm/" title="A-star-search-algorithm" class="md-nav__link">
+    <a href="../../Application/search/Graph-and-tree-search-algorithm/A-star-search-algorithm/" title="A-star-search-algorithm" class="md-nav__link">
       A-star-search-algorithm
     </a>
   </li>
@@ -1072,7 +1240,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Application/search/Graph-and-tree-search-algorithm/B-star-search-algorithm/" title="B-star-search-algorithm" class="md-nav__link">
+    <a href="../../Application/search/Graph-and-tree-search-algorithm/B-star-search-algorithm/" title="B-star-search-algorithm" class="md-nav__link">
       B-star-search-algorithm
     </a>
   </li>
@@ -1084,7 +1252,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Application/search/Graph-and-tree-search-algorithm/Beam-search/" title="Beam-search" class="md-nav__link">
+    <a href="../../Application/search/Graph-and-tree-search-algorithm/Beam-search/" title="Beam-search" class="md-nav__link">
       Beam-search
     </a>
   </li>
@@ -1096,7 +1264,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Application/search/Graph-and-tree-search-algorithm/Iterative-deepening-depth-first-search/" title="Iterative-deepening-depth-first-search" class="md-nav__link">
+    <a href="../../Application/search/Graph-and-tree-search-algorithm/Iterative-deepening-depth-first-search/" title="Iterative-deepening-depth-first-search" class="md-nav__link">
       Iterative-deepening-depth-first-search
     </a>
   </li>
@@ -1137,7 +1305,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Application/sorting/" title="Introduction" class="md-nav__link">
+    <a href="../../Application/sorting/" title="Introduction" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -1168,7 +1336,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Application/sorting/merge-sorts/Merge-sort/" title="Merge-sort" class="md-nav__link">
+    <a href="../../Application/sorting/merge-sorts/Merge-sort/" title="Merge-sort" class="md-nav__link">
       Merge-sort
     </a>
   </li>
@@ -1180,7 +1348,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Application/sorting/merge-sorts/Merge-algorithm/" title="Merge-algorithm" class="md-nav__link">
+    <a href="../../Application/sorting/merge-sorts/Merge-algorithm/" title="Merge-algorithm" class="md-nav__link">
       Merge-algorithm
     </a>
   </li>
@@ -1192,7 +1360,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../Application/sorting/merge-sorts/k-way-merge-algorithm/" title="K-way-merge-algorithm" class="md-nav__link">
+    <a href="../../Application/sorting/merge-sorts/k-way-merge-algorithm/" title="K-way-merge-algorithm" class="md-nav__link">
       K-way-merge-algorithm
     </a>
   </li>
@@ -1234,57 +1402,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    递归公式
+  <a href="#definition" class="md-nav__link">
+    Definition
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#n-cubes" class="md-nav__link">
-    n-Cubes
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kmp_failure_function" class="md-nav__link">
-    KMP failure function
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#one_by_one" class="md-nav__link">
-    one by one
+  <a href="#examples" class="md-nav__link">
+    Examples
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    循环次数的确定
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#naive_string_search" class="md-nav__link">
-    naive string search
+  <a href="#factorial" class="md-nav__link">
+    Factorial
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    建立递归关系
-  </a>
   
 </li>
       
@@ -1305,79 +1445,38 @@
               
                 
                 
-                <h1 id="algorithm_and_math">algorithm and math<a class="headerlink" href="#algorithm_and_math" title="Permanent link">#</a></h1>
-<p>使用数学来描述算法，根据数学公式写出算法：</p>
+                <div class="toc">
 <ul>
-<li>递推公式</li>
+<li><a href="#recurrence_relation">Recurrence relation</a><ul>
+<li><a href="#definition">Definition</a></li>
+<li><a href="#examples">Examples</a><ul>
+<li><a href="#factorial">Factorial</a></li>
 </ul>
-<p>现在需要对每个算法都写出其递归公式。</p>
-<p>要写出算法的形式化描述，这是非常重要的。</p>
-<p>书写递归公式的几个要素：</p>
-<ul>
-<li>初始条件</li>
-<li>递归关系，递归关系往往对应这如下几种情况：</li>
-<li>新加一个元素</li>
+</li>
 </ul>
-<p>《algorithm-DP-VS-最长公共子序列-VS-矩阵连乘问题-VS-最大子段和.md》</p>
-<p>在<a href="https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm">Knuth–Morris–Pratt algorithm</a>中对算法的描述：</p>
-<blockquote>
-<p>The most straightforward algorithm, known as the "<a href="https://en.wikipedia.org/wiki/Brute-force_search">Brute-force</a>" or "Naive" algorithm, is to look for a <strong>word match</strong> at each index <code>m</code>, the position in the string being searched, i.e. <code>S[m]</code>. At each position <code>m</code> the algorithm first checks for equality of the first character in the word being searched, i.e. <code>S[m] =? W[0]</code>. If a match is found, the algorithm tests the other characters in the word being searched by checking successive values of the word position index, <code>i</code>. The algorithm retrieves the character <code>W[i]</code> in the word being searched and checks for equality of the expression <code>S[m+i] =? W[i]</code>. If all successive characters match in <code>W</code> at position <code>m</code>, then a match is found at that position in the search string. If the index <code>m</code> reaches the end of the string then there is no match, in which case the search is said to "fail".</p>
-</blockquote>
-<h2 id="_1">递归公式<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
-<h2 id="n-cubes"><a href="https://en.wikipedia.org/wiki/Hypercube">n-Cubes</a><a class="headerlink" href="#n-cubes" title="Permanent link">#</a></h2>
-<p>《Discrete Mathematics and Its Applications》的10.2 Graph Terminology and Special Types of Graphs中有这样的描述：</p>
-<blockquote>
-<p>Note that you can construct the (n + 1)-cube $Q_{n+1}$ from the n-cube $Q_n$ by making two copies of $Q_n$ , prefacing the labels on the vertices with a 0 in one copy of $Q_n$ and with a 1 in the other copy of $Q_n$ , and adding edges connecting two vertices that have labels differing only in the first bit. </p>
-</blockquote>
-<h2 id="kmp_failure_function">KMP failure function<a class="headerlink" href="#kmp_failure_function" title="Permanent link">#</a></h2>
-<p>KMP failure function的计算也有赖于递归关系的建立，参见<a href="http://www.mathcs.emory.edu/~cheung/Courses/323/Syllabus/Text/Matching-KMP2.html">Computing the KMP failure function (f(k))</a>。</p>
-<h2 id="one_by_one">one by one<a class="headerlink" href="#one_by_one" title="Permanent link">#</a></h2>
-<p>一次处理一个元素，这是很多算法的运作方式：</p>
-<ul>
-<li>parsing</li>
-<li><a href="https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm">Knuth–Morris–Pratt algorithm</a></li>
+</li>
 </ul>
-<p>这背后是算法和离散数学。</p>
-<h3 id="_2">循环次数的确定<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
-<p>按照one by one的思路，非常多的算法最终都能够形式化成循环的处理，可能会嵌套多层循环。当将算法形式化为循环后进行实现的时候，一个非常重要的问题就是循环语句的实现：</p>
-<ul>
-<li><code>for</code>语句一个非常重要的就是循环次数的确定，只有先确定好循环次数后，才能够写出正确的for循环</li>
-<li><code>`while</code>语句可能涉及到的有：</li>
-<li>循环次数的确定</li>
-<li>终止条件的确定</li>
-</ul>
-<p>下面以结合一些具体的算法来进行说明</p>
-<h3 id="naive_string_search">naive string search<a class="headerlink" href="#naive_string_search" title="Permanent link">#</a></h3>
-<p>Given a text <code>txt</code> and a pattern <code>pat</code>, prints all occurrences of <code>pat</code> in <code>txt</code>.</p>
-<p>这个问题最终是可以形式化为两次<code>for</code>循环的，要想写出正确的<code>for</code>语句第一个问题就是：在<code>txt</code>一共要<code>pat</code>将进行多少次匹配？</p>
-<p>其实回答这个问题并不是非常难，一个非常简单的技巧是进行<strong>枚举</strong>，我们可以从最最简单的情况进行枚举，设<code>txt</code>的长度是<code>txt_len</code>，<code>pat</code>的长度是<code>pat_len</code>：</p>
-<ul>
-<li><code>txt_len</code>为2， <code>pat_len</code>为1，显然要进行2次匹配</li>
-<li><code>txt_len</code>为4， <code>pat_len</code>为2，显然要进行3次匹配</li>
-<li><code>txt_len</code>为4， <code>pat_len</code>为3，显然要进行2次匹配</li>
-</ul>
-<p>显然要进行<code>txt_len - pat_len + 1</code>次匹配，所以第一层<code>for</code>循环就需要产生<code>txt_len - pat_len + 1</code>次循环。所以最终我们可以写出如下代码</p>
-<pre><code class="python">def brute_force_search(txt, pat):
-    &quot;&quot;&quot;
-    Given a text txt and a pattern pat, prints all occurrences of pat in txt.
-    https://www.geeksforgeeks.org/naive-algorithm-for-pattern-searching/
-    :param txt:
-    :param pat:
-    :return:
-    &quot;&quot;&quot;
-    txt_len = len(txt)
-    pat_len = len(pat)
-    for i in range(txt_len - pat_len + 1):
-        for j in range(pat_len):
-            if txt[i + j] != pat[j]:
-                break
-        if j == pat_len - 1:
-            print(txt[i:i + pat_len])
-        j = 0
-</code></pre>
-
-<h2 id="_3">建立递归关系<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
-<p>KMP算法也存在递归关系。</p>
+</div>
+<h1 id="recurrence_relation"><a href="https://en.wikipedia.org/wiki/Recurrence_relation">Recurrence relation</a><a class="headerlink" href="#recurrence_relation" title="Permanent link">#</a></h1>
+<p><strong><em>SUMMARY</em></strong> : 递归关系</p>
+<p>In <a href="https://en.wikipedia.org/wiki/Mathematics">mathematics</a>, a <strong>recurrence relation</strong> is an <a href="https://en.wikipedia.org/wiki/Equation">equation</a> that <a href="https://en.wikipedia.org/wiki/Recursion">recursively</a> defines a <a href="https://en.wikipedia.org/wiki/Sequence">sequence</a> or multidimensional array of values, once one or more initial terms are given; each further term of the sequence or array is defined as a <a href="https://en.wikipedia.org/wiki/Function_(mathematics)">function</a> of the preceding terms.</p>
+<p>The term <strong>difference equation</strong> sometimes (and for the purposes of this article) refers to a specific type of <strong>recurrence relation</strong>. However, "difference equation" is frequently used to refer to <em>any</em> recurrence relation.</p>
+<h2 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">#</a></h2>
+<p>A <em>recurrence relation</em> is an equation that expresses each element of a <a href="https://en.wikipedia.org/wiki/Sequence">sequence</a> as a function of the <strong>preceding ones</strong>. More precisely, in the case where only the immediately <strong>preceding element</strong> is involved, a recurrence relation has the form</p>
+<p>$ u_{n}=\varphi (n,u_{n-1})\quad {\text{for}}\quad n&gt;0, $</p>
+<p>where</p>
+<p>$ \varphi :\mathbb {N} \times X\to X $</p>
+<p>is a function, where <em>X</em> is a set to which the elements of a sequence must belong. For any $ u_{0}\in X $, this defines a unique sequence with $ u_{0} $as its first element, called the <em>initial value</em>.[<a href="https://en.wikipedia.org/wiki/Recurrence_relation#cite_note-1">1]</a></p>
+<p>It is easy to modify the definition for getting sequences starting from the term of index 1 or higher.</p>
+<p>This defines recurrence relation of <em>first order</em>. A recurrence relation of <em>order</em> <em>k</em> has the form</p>
+<p>$ u_{n}=\varphi (n,u_{n-1},u_{n-2},\ldots ,u_{n-k})\quad {\text{for}}\quad n\geq k, $</p>
+<p>where $ \varphi :\mathbb {N} \times X^{k}\to X $ is a function that involves <em>k</em> consecutive elements of the sequence. In this case, <em>k</em> initial values are needed for defining a sequence.</p>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
+<h3 id="factorial">Factorial<a class="headerlink" href="#factorial" title="Permanent link">#</a></h3>
+<p>The <a href="https://en.wikipedia.org/wiki/Factorial">factorial</a> is defined by the <strong>recurrence relation</strong></p>
+<p>$ n!=n(n-1)!\quad {\text{for}}\quad n&gt;0, $</p>
+<p>and the <strong>initial condition</strong></p>
+<p>$ 0!=1. $</p>
                 
                   
                 
@@ -1396,6 +1495,41 @@
         
 <footer class="md-footer">
   
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../Recursion(computer-science)/" title="Recursion(computer-science)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Recursion(computer-science)
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../Tower-of-Hanoi/" title="Tower-of-Hanoi" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Tower-of-Hanoi
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
@@ -1413,9 +1547,9 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
-      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
     
   </body>

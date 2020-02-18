@@ -1,6 +1,6 @@
 nav:
     - Home: index.md
-    - Recursion: recursion
+    - Recursion: Recursion
     - Algorithm-design-paradigm: Algorithm-design-paradigm
     - Analysis-of-algorithms: Analysis-of-algorithms
     - Algorithm-and-math: Algorithm-and-math.md
