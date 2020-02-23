@@ -1,5 +1,3 @@
-[TOC]
-
 # [Recursion (computer science)](https://en.wikipedia.org/wiki/Recursion_(computer_science))
 
 **Recursion** in [computer science](https://en.wikipedia.org/wiki/Computer_science) is a method of solving a problem where the solution depends on solutions to smaller instances of the same problem (as opposed to [iteration](https://en.wikipedia.org/wiki/Iteration#Computing)).[[1\]](https://en.wikipedia.org/wiki/Recursion_(computer_science)#cite_note-1) The approach can be applied to many types of problems, and [recursion](https://en.wikipedia.org/wiki/Recursion) is one of the central ideas of computer science.[[2\]](https://en.wikipedia.org/wiki/Recursion_(computer_science)#cite_note-2)
