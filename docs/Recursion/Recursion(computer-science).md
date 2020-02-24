@@ -1,23 +1,24 @@
-# [Recursion (computer science)](https://en.wikipedia.org/wiki/Recursion_(computer_science))
+# Recursion (computer science)
 
-**Recursion** in [computer science](https://en.wikipedia.org/wiki/Computer_science) is a method of solving a problem where the solution depends on solutions to smaller instances of the same problem (as opposed to [iteration](https://en.wikipedia.org/wiki/Iteration#Computing)).[[1\]](https://en.wikipedia.org/wiki/Recursion_(computer_science)#cite_note-1) The approach can be applied to many types of problems, and [recursion](https://en.wikipedia.org/wiki/Recursion) is one of the central ideas of computer science.[[2\]](https://en.wikipedia.org/wiki/Recursion_(computer_science)#cite_note-2)
+在[Recursion](https://dengking.github.io/Post/Recursion/)中，我们已经接触了recursion 的概念，本文将分析computer science中的recursion。
 
-***SUMMARY*** : 在[Recursion](https://en.wikipedia.org/wiki/Recursion)中是从定义的角度来描述递归，在本篇中，是从解决问题的角度来描述递归；
+## 维基百科[Recursion (computer science)](https://en.wikipedia.org/wiki/Recursion_(computer_science))
+
+**Recursion** in [computer science](https://en.wikipedia.org/wiki/Computer_science) is a method of solving a problem where the solution depends on solutions to smaller instances of the same problem (as opposed to [iteration](https://en.wikipedia.org/wiki/Iteration#Computing)). The approach can be applied to many types of problems, and [recursion](https://en.wikipedia.org/wiki/Recursion) is one of the central ideas of computer science. 
 
 > The power of **recursion** evidently lies in the possibility of defining an infinite（无限的） set of objects by a finite（有限的） statement. In the same manner, an infinite number of computations can be described by a finite recursive program, even if this program contains no explicit repetitions.
 >
-> — [Niklaus Wirth](https://en.wikipedia.org/wiki/Niklaus_Wirth), *Algorithms + Data Structures = Programs*, 1976[[3\]](https://en.wikipedia.org/wiki/Recursion_(computer_science)#cite_note-3)
+> — [Niklaus Wirth](https://en.wikipedia.org/wiki/Niklaus_Wirth), *Algorithms + Data Structures = Programs*, 1976
 
 
 
-***SUMMARY*** : 从finite（有限的） statement到 infinite（无限的），这正是recursion的强大所在；
+> NOTE: 在维基百科[Recursion](https://en.wikipedia.org/wiki/Recursion)中是从定义（如何进行递归定义，参见维基百科[Recursive definition](https://en.wikipedia.org/wiki/Recursive_definition)）的角度来描述递归，在维基百科[Recursion (computer science)](https://en.wikipedia.org/wiki/Recursion_(computer_science))中，是从解决问题的角度（如何编码实现）来描述递归；
+
+> NOTE: 从finite（有限的） statement到 infinite（无限的），这正是recursion的强大所在；
 
 Most computer [programming languages](https://en.wikipedia.org/wiki/Programming_language) support recursion by allowing a [function](https://en.wikipedia.org/wiki/Function_(computer_science)) to call itself from within its own code. Some [functional programming](https://en.wikipedia.org/wiki/Functional_programming) languages do not define any looping constructs but rely solely on recursion to repeatedly call code. [Computability theory](https://en.wikipedia.org/wiki/Computability_theory) proves that these recursive-only languages are [Turing complete](https://en.wikipedia.org/wiki/Turing_completeness); they are as computationally powerful as Turing complete imperative languages, meaning they can solve the same kinds of problems as imperative languages even without iterative control structures such as `while` and `for`.
 
-大多数计算机编程语言通过允许函数在自己的代码中调用自身来支持递归。
-一些函数式编程语言不定义任何循环结构，而仅仅依赖递归来重复调用代码。
-可计算性理论证明了这些递归语言是图灵完备的;
-它们与图灵完全命令式语言一样具有强大的计算能力，这意味着即使没有诸如while和for之类的迭代控制结构，它们也可以像命令式语言一样解决相同类型的问题。
+
 
 ## Recursive functions and algorithms
 
