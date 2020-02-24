@@ -1,8 +1,4 @@
 nav:
     - Introduction: index.md
-    - Recursion(computer-science): Recursion(computer-science).md
     - Tower-of-Hanoi: Tower-of-Hanoi.md
-    - VS-structural-recursion-VS-generative-recursion: VS-structural-recursion-VS-generative-recursion.md
-    - Recursion-to-iteration: Recursion-to-iteration.md
-    - Recursion-analysis-and-representation: Recursion-analysis-and-representation.md
     
