@@ -2,272 +2,252 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://dengking.github.io/algorithm/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Recursion/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Recursion/Recursion(computer-science)/</loc>
-     <lastmod>2020-02-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://dengking.github.io/algorithm/Recursion/Recurrence-relation/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Recursion/Tower-of-Hanoi/</loc>
-     <lastmod>2020-02-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://dengking.github.io/algorithm/Recursion/Structural-induction/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Recursion/VS-structural-recursion-VS-generative-recursion/</loc>
-     <lastmod>2020-02-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://dengking.github.io/algorithm/Recursion/Corecursion/</loc>
-     <lastmod>2020-02-18</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://dengking.github.io/algorithm/Recursion/VS-recursion-VS-corecursion/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Recursion/Recursion-to-iteration/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Recursion/Recursion-analysis-and-representation/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/00-Brute-force/Brute-force-search/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/01-Divide-and-Conquer/Divide-and-conquer-algorithm/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Optimal-substructure/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Bellman-equation/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Dynamic-programming/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Overlapping-subproblems/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/VS-最长公共子序列-VS-矩阵连乘问题-VS-最大子段和/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Catalan/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-Programming/Reading-list/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Greedy-algorithm/Greedy-algorithm/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Greedy-algorithm/Huffman-Coding/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Greedy-algorithm/Reading-list/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Optimization-summary/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/02-Dynamic-Programming&Greedy-Algorithm/Dynamic-programming-VS-search-algorithm-VS-greedy-algorithm/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/05-Backtracking/Backtracking/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/05-Backtracking/Sudoku-solving-algorithms/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/05-Backtracking/Permutation-and-combination/Permutation/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/05-Backtracking/Permutation-and-combination/Enum-permutation/Backtrack-enum-all-permutations-of-string/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/05-Backtracking/Permutation-and-combination/Enum-permutation/Enum-distinct-permutation-of-with-duplicate/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/05-Backtracking/Permutation-and-combination/Enum-permutation/Enum-permutation-reading-list/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/05-Backtracking/Permutation-and-combination/Reading-list/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/05-Backtracking/Reading-list/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/06-Branch-and-Bound-Algorithm/Branch-and-bound/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/06-Branch-and-Bound-Algorithm/Branch-and-cut/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/Heuristic/Heuristic(computer-science)/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/Heuristic/Heuristic-algorithms/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/Heuristic/Heuristic-algorithm-reading-list/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-design-paradigm/Brute-force-VS-backtrack/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Analysis-of-algorithms/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Analysis-of-algorithms/Combinatorial-explosion/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Algorithm-and-math/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Application/Computational-problem/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Application/search/Search-algorithm/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Application/search/Graph-and-tree-search-algorithm/A-star-search-algorithm/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Application/search/Graph-and-tree-search-algorithm/B-star-search-algorithm/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Application/search/Graph-and-tree-search-algorithm/Beam-search/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Application/search/Graph-and-tree-search-algorithm/Iterative-deepening-depth-first-search/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Application/sorting/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Application/sorting/merge-sorts/Merge-sort/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Application/sorting/merge-sorts/Merge-algorithm/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://dengking.github.io/algorithm/Application/sorting/merge-sorts/k-way-merge-algorithm/</loc>
-     <lastmod>2020-02-18</lastmod>
+     <lastmod>2020-02-24</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
