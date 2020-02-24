@@ -1,16 +1,16 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-int fib(int N)
+int iterative_fib(int n)
 {
     int last_last_one = 0; //上上个元素
     int last_one = 1;      // 上个元素
-    if (N == 0)
+    if (n == 0)
         return 0;
-    if (N == 1)
+    if (n == 1)
         return 1;
     int fib_number = 0;
-    for (int i = 2; i <= N; ++i)
+    for (int i = 2; i <= n; ++i)
     {
         fib_number = last_one + last_last_one;
         last_last_one = last_one;
@@ -19,9 +19,23 @@ int fib(int N)
     return fib_number;
 }
 
-int main(){
-    std::cout<<"input a number:"<<std::endl;
-    int N=0;
-    std::cin>>N;
-    std::cout<<"fib:"<<fib(N)<<std::endl;
+int recursive_fib(int n)
+{
+    if (n == 0)
+    {
+        return 0;
+    }
+    if (n == 1)
+    {
+        return 1;
+    }
+    return recursive_fib(n - 1) + recursive_fib(n - 2);
+}
+
+int main()
+{
+    std::cout << "input a number:" << std::endl;
+    int N = 0;
+    std::cin >> N;
+    std::cout << "fib:" << iterative_fib(N) << std::endl;
 }
