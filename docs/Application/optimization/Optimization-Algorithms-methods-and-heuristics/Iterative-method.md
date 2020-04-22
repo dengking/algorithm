@@ -1,7 +1,3 @@
-[TOC]
-
-
-
 # [Iterative method](https://en.wikipedia.org/wiki/Iterative_method)
 
 In [computational mathematics](https://en.wikipedia.org/wiki/Computational_mathematics), an **iterative method** is a [mathematical procedure](https://en.wikipedia.org/wiki/Algorithm) that uses an initial guess to generate a sequence of improving approximate solutions for a class of problems, in which the *n*-th approximation is derived from the previous ones. A specific implementation of an iterative method, including the [termination](https://en.wikipedia.org/wiki/Algorithm#Termination) criteria, is an [algorithm](https://en.wikipedia.org/wiki/Algorithm) of the iterative method. An iterative method is called **convergent** if the corresponding sequence converges for given initial approximations. A mathematically rigorous convergence analysis of an iterative method is usually performed; however, [heuristic](https://en.wikipedia.org/wiki/Heuristic)-based iterative methods are also common.

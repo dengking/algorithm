@@ -1,7 +1,3 @@
-[TOC]
-
-
-
 # 前言
 
 在阅读[Neural Networks Tutorial – A Pathway to Deep Learning](https://adventuresinmachinelearning.com/neural-networks-tutorial/)的[4.1 A simple example in code](https://adventuresinmachinelearning.com/neural-networks-tutorial/#simple-example)小节的时候，其中的例子：

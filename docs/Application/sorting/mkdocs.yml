@@ -1,3 +1,4 @@
 nav:
     - Introduction: index.md
     - Merge-sort: merge-sorts
+    - Quick-sort: Quick-sort
