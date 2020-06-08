@@ -1,8 +1,8 @@
-[TOC]
+# Search algorithm
 
+“search”是一个非常宏大的主题，有时候有这样的感觉：computer science的各种问题都可以认为是一种search。
 
-
-# [Search algorithm](https://en.wikipedia.org/wiki/Search_algorithm)
+## 维基百科[Search algorithm](https://en.wikipedia.org/wiki/Search_algorithm)
 
 > NOTE: 这篇文章对search algorithm的描述是非常好的，尤其是对问题的分类
 
@@ -54,9 +54,9 @@ Algorithms are often evaluated by their [computational complexity](https://en.wi
 
 
 
-## Classes
+### Classes
 
-### For virtual search spaces
+#### For virtual search spaces
 
 Algorithms for searching **virtual spaces** are used in the [constraint satisfaction problem](https://en.wikipedia.org/wiki/Constraint_satisfaction_problem), where the goal is to find a set of **value assignments** to certain variables that will satisfy specific mathematical [equations](https://en.wikipedia.org/wiki/Equation) and [inequations](https://en.wikipedia.org/wiki/Inequation) / equalities. They are also used when the goal is to find a **variable assignment** that will [maximize or minimize](https://en.wikipedia.org/wiki/Discrete_optimization) a certain function of those variables. Algorithms for these problems include the basic [brute-force search](https://en.wikipedia.org/wiki/Brute-force_search)(also called "naïve" or "uninformed" search), and a variety of [heuristics](https://en.wikipedia.org/wiki/Heuristic_function) that try to exploit partial knowledge about the structure of this space, such as linear relaxation, constraint generation, and [constraint propagation](https://en.wikipedia.org/wiki/Local_consistency).
 
@@ -68,7 +68,7 @@ Another important sub-class consists of algorithms for exploring the [game tree]
 
 
 
-### For sub-structures of a given structure
+#### For sub-structures of a given structure
 
 The name "combinatorial search"（组合搜索） is generally used for algorithms that look for a specific sub-structure of a given [discrete structure](https://en.wikipedia.org/wiki/Discrete_mathematics), such as a graph, a [string](https://en.wikipedia.org/wiki/String_(computer_science)), a finite [group](https://en.wikipedia.org/wiki/Group_(mathematics)), and so on. The term [combinatorial optimization](https://en.wikipedia.org/wiki/Combinatorial_optimization) is typically used when the goal is to find a **sub-structure** with a maximum (or minimum) value of some parameter. (Since the sub-structure is usually represented in the computer by a set of integer variables with constraints, these problems can be viewed as special cases of constraint satisfaction or discrete optimization; but they are usually formulated and solved in a more abstract setting where the internal representation is not explicitly mentioned.)
 
@@ -78,13 +78,13 @@ Another important subclass of this category are the [string searching algorithms
 
 
 
-### Search for the maximum of a function
+#### Search for the maximum of a function
 
 In 1953, American [statistician](https://en.wikipedia.org/wiki/Statistics) [Jack Kiefer](https://en.wikipedia.org/wiki/Jack_Kiefer_(statistician)) devised [Fibonacci search](https://en.wikipedia.org/wiki/Fibonacci_search_technique) which can be used to find the maximum of a unimodal（单峰） function and has many other applications in computer science.
 
 
 
-### For quantum computers
+#### For quantum computers
 
 There are also search methods designed for [quantum computers](https://en.wikipedia.org/wiki/Quantum_computing), like [Grover's algorithm](https://en.wikipedia.org/wiki/Grover's_algorithm), that are theoretically faster than linear or brute-force search even without the help of data structures or heuristics.
 
@@ -92,7 +92,7 @@ There are also search methods designed for [quantum computers](https://en.wikipe
 
 
 
-## See also
+### See also
 
 - [Backward induction](https://en.wikipedia.org/wiki/Backward_induction)
 - [Content-addressable memory](https://en.wikipedia.org/wiki/Content-addressable_memory) hardware
@@ -113,10 +113,6 @@ Categories:
 
 
 
-### Bibliography
+## [Graph](https://en.wikipedia.org/wiki/Graph_traversal) **and** [tree search algorithms](https://en.wikipedia.org/wiki/Tree_traversal)
 
-#### Books
-
-- [Knuth, Donald](https://en.wikipedia.org/wiki/Donald_Knuth) (1998). *Sorting and Searching*. [The Art of Computer Programming](https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming). **3** (2nd ed.). Reading, MA: Addison-Wesley Professional.
-
-d
+这部分内容在工程[data-structure](https://dengking.github.io/data-structure/)的graph章节进行了描述。
