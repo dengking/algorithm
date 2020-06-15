@@ -1,8 +1,8 @@
-[TOC]
 
 
 
-# [Optimal substructure](https://en.wikipedia.org/wiki/Optimal_substructure)
+
+# 维基百科[Optimal substructure](https://en.wikipedia.org/wiki/Optimal_substructure)
 
 In [computer science](https://en.wikipedia.org/wiki/Computer_science), a problem is said to have **optimal substructure** if an optimal solution can be constructed from optimal solutions of its subproblems. This property is used to determine the usefulness of **dynamic programming** and **greedy algorithms** for a problem.[[1\]](https://en.wikipedia.org/wiki/Optimal_substructure#cite_note-cormen-1)
 
@@ -27,7 +27,7 @@ In the application of [dynamic programming](https://en.wikipedia.org/wiki/Dynami
 - [Longest path problem](https://en.wikipedia.org/wiki/Longest_path_problem)
 - **Least-cost airline fare.** (Using online flight search, we will frequently find that the cheapest flight from airport A to airport B involves a single connection through airport C, but the cheapest flight from airport A to airport C involves a connection through some other airport D.)
 
-# 20191112
+## 20191112
 
 最优子结构其实就具备递归性质：全问题的最优解蕴含着子问题的最优解。
 

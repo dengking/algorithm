@@ -1,3 +1,5 @@
 nav:
     - Search-algorithm: Search-algorithm.md
+    - Property-of-search-algorithm: Property-of-search-algorithm
+    - Graph-and-tree-search-algorithm: Graph-and-tree-search-algorithm
     
