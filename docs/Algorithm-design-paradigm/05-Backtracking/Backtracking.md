@@ -1,14 +1,14 @@
-[TOC]
+# Backtracking
 
-# [Backtracking](https://en.wikipedia.org/wiki/Backtracking)
+## wikipedia [Backtracking](https://en.wikipedia.org/wiki/Backtracking)
 
 **Backtracking** is a general [algorithm](https://en.wikipedia.org/wiki/Algorithm) for finding all (or some) solutions to some [computational problems](https://en.wikipedia.org/wiki/Computational_problem), notably [constraint satisfaction problems](https://en.wikipedia.org/wiki/Constraint_satisfaction_problem), that incrementally builds **candidates** to the solutions, and abandons a candidate ("backtracks") as soon as it determines that the candidate cannot possibly be completed to a valid solution.[[1\]](https://en.wikipedia.org/wiki/Backtracking#cite_note-1)[[2\]](https://en.wikipedia.org/wiki/Backtracking#cite_note-2)
 
 > NOTE: 上面这段话的最后一句，就点明了backtrack的含义所在，非常精准。
 
-***SUMMARY*** : 当我们需要进行穷举的时候，使用[Backtracking](https://en.wikipedia.org/wiki/Backtracking)，其实从本质上来说，[Backtracking](https://en.wikipedia.org/wiki/Backtracking)对应的是permutation，关于[Backtracking](https://en.wikipedia.org/wiki/Backtracking)和permutation，可以参看如下文章：
-
-- [Write a program to print all permutations of a given string](https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/)
+> NOTE : 当我们需要进行穷举的时候，使用[Backtracking](https://en.wikipedia.org/wiki/Backtracking)，其实从本质上来说，[Backtracking](https://en.wikipedia.org/wiki/Backtracking)对应的是permutation，关于[Backtracking](https://en.wikipedia.org/wiki/Backtracking)和permutation，可以参看如下文章：
+>
+> - [Write a program to print all permutations of a given string](https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/)
 
 The classic textbook example of the use of backtracking is the [eight queens puzzle](https://en.wikipedia.org/wiki/Eight_queens_puzzle), that asks for all arrangements of eight [chess](https://en.wikipedia.org/wiki/Chess) [queens](https://en.wikipedia.org/wiki/Queen_(chess)) on a standard [chessboard](https://en.wikipedia.org/wiki/Chessboard) so that no queen attacks any other. In the common backtracking approach, **the partial candidates** are arrangements of *k* queens in the first *k* rows of the board, all in different rows and columns. Any **partial solution** that contains two mutually attacking queens can be abandoned.
 
@@ -16,7 +16,7 @@ The classic textbook example of the use of backtracking is the [eight queens puz
 
 Backtracking can be applied only for problems which admit the concept of a "partial candidate solution" and a relatively quick test of whether it can possibly be completed to a valid solution. It is useless, for example, for locating a given value in an unordered table. When it is applicable, however, backtracking is often much faster than [brute force enumeration](https://en.wikipedia.org/wiki/Brute_force_search) of all complete candidates, since it can eliminate（消除） many candidates with a single test.
 
-***SUMMARY*** : [Backtracking](https://en.wikipedia.org/wiki/Backtracking) VS  [brute force enumeration](https://en.wikipedia.org/wiki/Brute_force_search) 
+> NOTE : [Backtracking](https://en.wikipedia.org/wiki/Backtracking) VS  [brute force enumeration](https://en.wikipedia.org/wiki/Brute_force_search) 
 
 Backtracking is an important tool for solving [constraint satisfaction problems](https://en.wikipedia.org/wiki/Constraint_satisfaction_problem),[[3\]](https://en.wikipedia.org/wiki/Backtracking#cite_note-BiereHeule2009-3) such as [crosswords](https://en.wikipedia.org/wiki/Crosswords), [verbal arithmetic](https://en.wikipedia.org/wiki/Verbal_arithmetic), [Sudoku](https://en.wikipedia.org/wiki/Algorithmics_of_sudoku), and many other puzzles. It is often the most convenient (if not the most efficient[*citation needed*]) technique for [parsing](https://en.wikipedia.org/wiki/Parsing),[[4\]](https://en.wikipedia.org/wiki/Backtracking#cite_note-Watson2017-4) for the [knapsack problem](https://en.wikipedia.org/wiki/Knapsack_problem) and other [combinatorial optimization](https://en.wikipedia.org/wiki/Combinatorial_optimization) problems. It is also the basis of the so-called [logic programming](https://en.wikipedia.org/wiki/Logic_programming) languages such as [Icon](https://en.wikipedia.org/wiki/Icon_programming_language), [Planner](https://en.wikipedia.org/wiki/Planner_programming_language) and [Prolog](https://en.wikipedia.org/wiki/Prolog).
 
@@ -28,7 +28,7 @@ The term "backtrack" was coined by American mathematician [D. H. Lehmer](https:/
 
 
 
-## Description of the method
+### Description of the method
 
 The **backtracking algorithm** enumerates a set of ***partial candidates*** that, in principle, could be *completed* in various ways to give all the possible solutions to the given problem. The completion is done incrementally, by a sequence of ***candidate extension steps.***
 
@@ -42,7 +42,7 @@ Therefore, the *actual search tree* that is traversed by the algorithm is only a
 
 
 
-### Pseudocode
+#### Pseudocode
 
 In order to apply **backtracking** to a specific class of problems, one must provide the data *P* for the particular instance of the problem that is to be solved, and six [procedural parameters](https://en.wikipedia.org/wiki/Procedural_parameter), *root*, *reject*, *accept*, *first*, *next*, and *output*. These procedures should take the instance data *P* as a parameter and should do the following:
 
@@ -65,7 +65,7 @@ procedure bt(c)
     s ← next(P,s)
 ```
 
-### Usage considerations
+#### Usage considerations
 
 The *reject* procedure should be a [boolean-valued function](https://en.wikipedia.org/wiki/Boolean-valued_function) that returns *true* only if it is certain that no possible extension of *c* is a valid solution for *P*. If the procedure cannot reach a definite conclusion, it should return *false*. An incorrect *true* result may cause the *bt* procedure to miss some valid solutions. The procedure may assume that *reject*(*P*,*t*) returned *false* for every ancestor *t* of *c* in the search tree.
 
@@ -79,7 +79,7 @@ The *first* and *next* procedures are used by the backtracking algorithm to enum
 
 Together, the *root*, *first*, and *next* functions define the set of partial candidates and the potential search tree. They should be chosen so that every solution of *P* occurs somewhere in the tree, and no partial candidate occurs more than once. Moreover, they should admit an efficient and effective *reject* predicate.
 
-## Examples
+### Examples
 
 Examples where backtracking can be used to solve puzzles or problems include:
 
@@ -89,7 +89,7 @@ Examples where backtracking can be used to solve puzzles or problems include:
 
 The following is an example where backtracking is used for the [constraint satisfaction problem](https://en.wikipedia.org/wiki/Constraint_satisfaction_problem):
 
-### Constraint satisfaction
+#### Constraint satisfaction
 
 The general [constraint satisfaction problem](https://en.wikipedia.org/wiki/Constraint_satisfaction_problem) consists in finding a list of integers *x* = (*x*[1], *x*[2], …, *x*[*n*]), each in some range {1, 2, …, *m*}, that satisfies some arbitrary constraint (boolean function) *F*.
 
