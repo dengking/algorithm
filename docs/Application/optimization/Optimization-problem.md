@@ -1,4 +1,4 @@
-[TOC]
+
 
 # [Optimization problem](https://en.wikipedia.org/wiki/Optimization_problem)
 
