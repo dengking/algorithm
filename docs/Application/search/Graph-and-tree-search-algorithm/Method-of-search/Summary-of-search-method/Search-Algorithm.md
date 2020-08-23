@@ -1,5 +1,3 @@
-
-
 # Search Algorithms
 
 ## [CSci 4511w: Class Notes on Search](https://www-users.cs.umn.edu/~gini/4511/search)
@@ -10,11 +8,13 @@ The description of most of the search algorithms in these notes is taken from J.
 
 We will address:
 
-#### 1. how to write search algorithms. In particular we will examine:
+#### 1. how to write search algorithms. 
+
+In particular we will examine:
 
 - the data structure to keep unexplored nodes. We use a queue (often called a list in many AI books) called ***OPEN***.
 - expansion of a node (or generation of its successors). All the successors of a node can be generated at once (method most commonly used) or they could be generated one at a time either in a systematic way or in a random way. The number of successors is called the ***branching factor***.
-- strategies for selecting which node to expand next. Different algorithms result from different choices (e.g. depth-first when successor nodes are added at the **beginning** of the queue, breadth-first when successor nodes are added at the **end** of the queue, etc),
+- strategies for selecting which node to expand next. Different algorithms result from different choices (e.g. **depth-first** when successor nodes are added at the **beginning** of the queue, **breadth-first** when successor nodes are added at the **end** of the queue, etc),
 - test for goal. We will assume the existence of a predicate that applied to a state will return true or false.
 - **bookkeeping** (keeping track of visited nodes, keeping track of path to goal, etc). Keeping track of visited nodes is usually done by keeping them in a queue (or, better a hash-table) called ***CLOSED***. This prevents getting trapped into loops or repeating work but results in a large space complexity. This is (most often) necessary when optimal solutions are sought, but can be (mostly) avoided in other cases.
   Keeping track of the path followed is not always necessary (when the problem is to find a **goal state** and knowing how to get there is not important).
@@ -35,13 +35,13 @@ We will address:
 
 - Space complexity and Time complexity: how the size of the memory and the time needed to run the algorithm grows depending on **branching factor**, **depth of solution**, **number of nodes**, etc.
 
-Let's briefly examine the properties of some commonly used uninformed search algorithms.
+Let's briefly examine the properties of some commonly used **uninformed search algorithms**.
 
-##### Depth-First Search
+#### Depth-First Search
 
 Termination:
 
-guaranteed for a finite space if repeated nodes are checked. Guaranteed when a depth bound is used. Not guaranteed otherwise.
+guaranteed for a finite space if repeated nodes are checked. Guaranteed when a depth bound（深度界限） is used. Not guaranteed otherwise.
 
 > NOTE: “repeated nodes are checked”就是为了避免“loop”。
 
@@ -53,7 +53,7 @@ Admissibility:
 
 not guaranteed.
 
-##### Breadth-First Search
+#### Breadth-First Search
 
 Termination:
 
@@ -69,7 +69,7 @@ Admissibility:
 
 the algorithm will always find the shortest path (it might not be the optimal path, if arcs have different costs).
 
-##### Depth-First Search Iterative-Deepening
+#### Depth-First Search Iterative-Deepening
 
 Termination:
 
@@ -89,7 +89,7 @@ the algorithm will always find the shortest path (it might not be the optimal pa
 
 - **uninformed** (depth-first, breadth-first, uniform cost, depth-limited, iterative deepening) versus **informed** (greedy, `A*`, `IDA*`, `SMA*`)
 
-  > NOTE: **uninformed**也就是blind search，没有heuristics的
+  > NOTE: **uninformed**的中文意思是“无知的”，在本文中，它所表示的是blind search，没有heuristics的
 
 - **local** (greedy, hill-climbing) versus **global** (uniform cost, `A*`, etc)
 
@@ -101,11 +101,12 @@ the algorithm will always find the shortest path (it might not be the optimal pa
 
 #### Depth-First Search with depth bound
 
+> NOTE: 带深度限制的深度优先搜索
+
 ```pseudocode
 1. Put the start node on OPEN.
 2. until OPEN is empty or a goal node has been reached
-   2.1 remove the topmost node from OPEN and put it on
-       CLOSED.  Call this node n.
+   2.1 remove the topmost node from OPEN and put it on CLOSED.  Call this node n.
    2.2 if the depth of n is less than the depth bound 
        then
        2.2.1 expand n, generating all successors (if any).  
@@ -127,7 +128,7 @@ Notes:
 
 - Nodes that have been expanded (i.e. their successors have been generated) are called **closed**, nodes that were generated and are awaiting expansion are called **open**. Two queues, `CLOSED` and `OPEN` keep track of these two sets of nodes.
 - The depth of a node in a graph is defined recursively as 1 + depth of its shallowest parent. The start node has 0 depth.
-- If the depth bound is less than the solution depth the algorithm terminates without finding a solution. If the depth bound is greater the algorithm might find a non optimal solution. This can be remedied（弥补） by completing the search to the depth of the last solution found and then returning the best solution.
+- If the **depth bound** is less than the **solution depth** the algorithm terminates without finding a solution. If the **depth bound** is greater the algorithm might find a non optimal solution. This can be remedied（弥补） by completing the search to the depth of the last solution found and then returning the best solution.
 - To save memory `CLOSED` needs to be cleaned up by keeping in it only the nodes on the current traversal path.
 
 > NOTE: 所搜索的是从start到goal的一条path。
@@ -150,14 +151,25 @@ Notes:
 
 #### Best-First Search
 
-The term best-first search is used in different ways by different authors. The Russell and Norvig textbook calls **best-first search** any algorithm that sorts the nodes according to some function and selects the best each time. Judea Pearl has a somewhat different definition of best-first, which is given here. The major difference is in the specification of how to handle nodes already seen (Russell and Norvig do not specify what to do) and in when goal test is done (Russell and Norvig in Graph-Search check for goal only on the first element of OPEN, Pearl checks as soon as the successors of a node are generated).
+The term **best-first search** is used in different ways by different authors:
+
+- The Russell and Norvig textbook calls **best-first search** any algorithm that sorts the nodes according to some function and selects the best each time. 
+
+- Judea Pearl has a somewhat different definition of best-first, which is given here. 
+
+The major difference is in the specification of how to handle nodes already seen (Russell and Norvig do not specify what to do) and in when goal test is done (Russell and Norvig in Graph-Search check for goal only on the first element of OPEN, Pearl checks as soon as the successors of a node are generated).
+
+> NOTE: 主要差异在于：
+>
+> - how to handle nodes already seen
+> - when goal test is done
+>
+> 需要注意的是，下面的algorithm采用的是Pearl的。
 
 ```pseudocode
 1. Put the start node S on OPEN.
 2. until OPEN is empty or a goal node has been reached
-   2.1 remove from OPEN a node at which f is minimum (break 
-       ties arbitrarily) and put it on CLOSED.  Call this 
-       node n.
+   2.1 remove from OPEN a node at which f is minimum (break ties arbitrarily) and put it on CLOSED.  Call this node n.
    2.2 expand n, generating all successors (if any).
    2.3 if any of the successors of n is a goal node, exit.
    2.4 for each successor n' of n
@@ -179,31 +191,40 @@ The term best-first search is used in different ways by different authors. The R
 
 Notes:
 
-- Step 2.3 requires checking if any of the children of the node just expanded is a goal node. This allows terminating as soon as a goal is found, but the solution returned might have a larger value of `f` than the optimal solution. To guarantee an optimal solution we need to use a `f` function that understimates（预测） the cost (as done in `A*`) and to test for goal after a node has been selected for expansion.
-- The computation required to do the tests is step 2.4.3 can be substantial. We could eliminate this step, at the cost of having to maintain duplicate descriptions of identical nodes.
-- If a lower value has been found for a node n' that had already been visited (step 2.4.3) and the old node was on `CLOSED`, instead of moving it back to `OPEN` we could leave it on `CLOSED`, redirect the pointer to its parent node (so it will point to the new parent on the shorter path), and recompute the `f` values of its descendants. This requires keeping track of descendants of nodes and not only of their parent (so it makes the program more complex to write), but it saves reexpading nodes that have already been expanded (so it can save time if expansion is an expensive process).
+- Step 2.3 requires checking if any of the children of the node just expanded is a **goal node**. This allows terminating as soon as a **goal** is found, but the solution returned might have a larger value of `f` than the optimal solution. To guarantee an optimal solution we need to use a `f` function that understimates（预测） the cost (as done in `A*`) and to test for goal after a node has been selected for expansion.
+
+  > NOTE: 也就是说，上述algorithm不保证optimal solution
+
+- The computation required to do the tests is (that) step 2.4.3 can be substantial. We could eliminate this step, at the cost of having to maintain duplicate descriptions of identical nodes.
+
+  > NOTE: 步骤2.4.3需要进行大量的计算
+
+- If a lower value has been found for a node `n'` that had already been visited (step 2.4.3) and the old node was on `CLOSED`, instead of moving it back to `OPEN` we could leave it on `CLOSED`, redirect the pointer to its parent node (so it will point to the new parent on the shorter path), and recompute the `f` values of its descendants. This requires keeping track of descendants of nodes and not only of their parent (so it makes the program more complex to write), but it saves reexpanding nodes that have already been expanded (so it can save time if expansion is an expensive process).
+
+  > NOTE: 对于“If a lower value has been found for a node `n'` that had already been visited (step 2.4.3) and the old node was on `CLOSED`”，上述算法中给出的处理方法是：move it back to `OPEN`.  上面这一段给出了另外一种处理方案：
+  >
+  > instead of moving it back to `OPEN` we could leave it on `CLOSED`, redirect the pointer to its parent node (so it will point to the new parent on the shorter path), and recompute the `f` values of its descendants
+  >
+  > 
+
 - In general there are no constraints on the function `f(n)`. Best first always selects for expansion the node with the smallest `f` value, so `f` values must be smaller for better nodes. Also, best-first discards multiple paths leading to the same node and keeps the path with the smallest `f` value.
+
 - Properties of Best-First
 
-Completeness:
+  - Completeness:
 
-guaranteed on finite search spaces
+    guaranteed on finite search spaces
 
-Admissibility:
-
-not guaranteed
-
-Time Complexity:
-
-depends on the accuracy of the heuristic function. See more later under A*.
-
-Space Complexity:
-
-O(B to the power of d) where B = branching factor, and d = solution depth
+  - Admissibility:
+    not guaranteed
+  - Time Complexity:
+    depends on the accuracy of the heuristic function. See more later under `A*`.
+  - Space Complexity:
+    O(B to the power of d) where B = branching factor, and d = solution depth
 
 > NOTE: best-first search和[Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra's_algorithm)是比较类似的
 
-### `A*`
+#### `A*`
 
 ```c++
 1. Put the start node S on OPEN.  Attach to s the cost 
@@ -230,3 +251,35 @@ O(B to the power of d) where B = branching factor, and d = solution depth
    else announce failure.
 ```
 
+- `A*` is a special case of **best-first search** where:
+
+  - The cost `f(n)` of a node is computed as `f(n) = g(n) + h(n)`, where `g(n)` is the cost of the current path from `s` to `n`, and `h(n)` is an estimate of the cost of the path from n to goal
+  - The `g` cost of a node `n` is computed recursively by adding the `g` cost of its parent node `m` to the cost of the arc from the parent `m` to the node `n` `g(n) = g(m) + c(m,n)`. We assume arc costs to be positive. The start node has a cost `g(s) = 0`.
+  - `h(n)` is an underestimate of the cost of the optimal path from `n` to goal. If we call `h*(n)` the cost of the optimal path forall `n` `h(n) < = h*(n)`. This implies that a goal node has a cost h(goal) = 0
+
+- The check for the goal node (step 2.2) must be done after the node has been selected for expansion to guarentee an optimal solution.
+
+- The redirection of the parent pointer is done using only the `g` value of the node (not the `f` value). This guarantees that the path used to any node is the best path.
+
+- When the heuristic used is monotone, `A*` never reopens nodes from `CLOSED`. This means that whenever a node is put into CLOSED, A* has already found the optimal path to it.
+
+- If forall n h(n) = 0 the algorithm `A*` is the same as Branch&Bound (or Uniform Cost).
+  If forall n h(n) = 0 and forall n, n' c(n,n')=1 the algorithm A* is the same as Breadth-First Search.
+
+- Properties of `A*`
+
+  - Completeness:
+
+    guaranteed even on infinite graphs provided that the branching factor is finite and that there is some positive constant delta such that every operator cost at least delta.
+
+  - Admissibility:
+
+    guaranteed given an admissible heuristics (i.e. h(n) is an underestimate of the cost of the optimal path from n to the goal for every node)
+
+  - Time Complexity:
+
+    depends on the accuracy of the heuristic function. If the heuristic function is exact A* runs in linear time, if the heuristic function is useless, the time complexity is exponential (as for uniform cost).
+
+  - Space Complexity:
+
+    O(B to the power of d)
