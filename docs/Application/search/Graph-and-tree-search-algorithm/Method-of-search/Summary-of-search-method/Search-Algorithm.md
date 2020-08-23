@@ -224,7 +224,7 @@ The major difference is in the specification of how to handle nodes already seen
 
 Notes:
 
-- Step 2.3 requires checking if any of the children of the node just expanded is a **goal node**. This allows terminating as soon as a **goal** is found, but the solution returned might have a larger value of `f` than the optimal solution. To guarantee an optimal solution we need to use a `f` function that understimates（预测） the cost (as done in `A*`) and to test for goal after a node has been selected for expansion.
+- Step 2.3 requires checking if any of the children of the node just expanded is a **goal node**. This allows terminating as soon as a **goal** is found, but the solution returned might have a larger value of `f` than the **optimal solution**. To guarantee an optimal solution we need to use a `f` function that understimates（预测） the cost (as done in `A*`) and to test for goal after a node has been selected for expansion.
 
   > NOTE: 也就是说，上述algorithm不保证optimal solution
 
@@ -286,11 +286,11 @@ Notes:
 
 - `A*` is a special case of **best-first search** where:
 
-  - The cost `f(n)` of a node is computed as `f(n) = g(n) + h(n)`, where `g(n)` is the cost of the current path from `s` to `n`, and `h(n)` is an estimate of the cost of the path from n to goal
+  - The cost `f(n)` of a node is computed as `f(n) = g(n) + h(n)`, where `g(n)` is the cost of the current path from `s` to `n`, and `h(n)` is an estimate of the cost of the path from `n` to **goal**
   - The `g` cost of a node `n` is computed recursively by adding the `g` cost of its parent node `m` to the cost of the arc from the parent `m` to the node `n` `g(n) = g(m) + c(m,n)`. We assume arc costs to be positive. The start node has a cost `g(s) = 0`.
   - `h(n)` is an underestimate of the cost of the optimal path from `n` to goal. If we call `h*(n)` the cost of the optimal path forall `n` `h(n) < = h*(n)`. This implies that a goal node has a cost `h(goal) = 0`
 
-- The check for the goal node (step 2.2) must be done after the node has been selected for expansion to guarentee an optimal solution.
+- The check for the goal node (step 2.2) must be done after the node has been selected for expansion to guarantee an optimal solution.
 
 - The redirection of the parent pointer is done using only the `g` value of the node (not the `f` value). This guarantees that the path used to any node is the best path.
 
