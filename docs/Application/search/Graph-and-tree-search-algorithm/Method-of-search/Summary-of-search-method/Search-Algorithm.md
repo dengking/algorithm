@@ -101,14 +101,14 @@ the algorithm will always find the shortest path (it might not be the optimal pa
 >
 > 在下面的各种algorithm中，都会看到**pointer**，原文中，作者并没有对pointer进行解释。根据“Depth-First Search with depth bound”中，我们可以推测得知：
 >
-> 每个node，都有一个指向它的parent的pointer：
+> 每个node，都有一个指向它的parent的pointer，检查为**parent pointer**：
 >
 > ```c++
 > 2.2.4 put the successors on top of OPEN and 
 >              provide for each a pointer back to n # 每个节点都有一个指向它的上级节点的指针
 > ```
 >
-> 使用pointer的原因是为了能够得到完整的solution：
+> 使用parent pointer的原因是为了能够得到完整的solution：
 >
 > ```c++
 > 3. If a goal node is found, 
@@ -284,15 +284,19 @@ Notes:
    else announce failure.
 ```
 
+> NOTE: 上述2.4.2、2.4.3、2.4.4和Best-First Search algorithm的2.4.3类似。
+
 - `A*` is a special case of **best-first search** where:
 
   - The cost `f(n)` of a node is computed as `f(n) = g(n) + h(n)`, where `g(n)` is the cost of the current path from `s` to `n`, and `h(n)` is an estimate of the cost of the path from `n` to **goal**
   - The `g` cost of a node `n` is computed recursively by adding the `g` cost of its parent node `m` to the cost of the arc from the parent `m` to the node `n` `g(n) = g(m) + c(m,n)`. We assume arc costs to be positive. The start node has a cost `g(s) = 0`.
-  - `h(n)` is an underestimate of the cost of the optimal path from `n` to goal. If we call `h*(n)` the cost of the optimal path forall `n` `h(n) < = h*(n)`. This implies that a goal node has a cost `h(goal) = 0`
+  - `h(n)` is an underestimate of the cost of the optimal path from `n` to goal. If we call `h*(n)` the cost of the optimal path `forall n h(n) < = h*(n)`. This implies that a goal node has a cost `h(goal) = 0`
 
-- The check for the goal node (step 2.2) must be done after the node has been selected for expansion to guarantee an optimal solution.
+- The check for the goal node (step 2.2) must be done after the node has been selected for expansion to guarantee an optimal solution
 
-- The redirection of the parent pointer is done using only the `g` value of the node (not the `f` value). This guarantees that the path used to any node is the best path.
+  > NOTE:  为什么能够实现？
+
+- The redirection of the **parent pointer** is done using only the `g` value of the node (not the `f` value). This guarantees that the path used to any node is the best path.
 
 - When the heuristic used is monotone（单调的）, `A*` never reopens nodes from `CLOSED`. This means that whenever a node is put into `CLOSED`, `A*` has already found the **optimal path** to it.
 
@@ -319,5 +323,15 @@ Notes:
 
 
 
+#### `Iterative-Deepening A*` (`IDA*`)
 
+`IDA*` is similar to Depth-First Iterative-Deepening, the difference being the cutoff criteria. A path is cutoff when its total cots f(n) exceeds a cost threshold. `IDA*` starts with a threshold equal to f(s) (which is equal to h'(s) since g(s) = 0). Each iteration is a depth-first search, cutting off a branch when its f(n) value exceeds the threshold. If a solution is found, the algorithm terminates. Otherwise, the threshold is increased to the minimum f value that exceeded the previous threshold and another depth-first search is started from scratch. This continues until a solution is found.
+
+- Time Complexity:
+
+  depends on the accuracy of the heuristic function. If the heuristic function is exact `IDA*` runs in linear time, if the heuristic function is useless, the time complexity is exponential (as for uniform cost).
+
+- Space Complexity:
+
+  O(d)
 
