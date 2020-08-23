@@ -101,7 +101,7 @@ the algorithm will always find the shortest path (it might not be the optimal pa
 >
 > 在下面的各种algorithm中，都会看到**pointer**，原文中，作者并没有对pointer进行解释。根据“Depth-First Search with depth bound”中，我们可以推测得知：
 >
-> 每个node，都有一个指向它的parent的pointer，检查为**parent pointer**：
+> 每个node，都有一个指向它的parent的pointer，简称为**parent pointer**：
 >
 > ```c++
 > 2.2.4 put the successors on top of OPEN and 
