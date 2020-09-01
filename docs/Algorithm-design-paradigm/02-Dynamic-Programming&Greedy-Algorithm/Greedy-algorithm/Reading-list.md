@@ -1,1 +1,0 @@
-https://www.geeksforgeeks.org/top-20-greedy-algorithms-interview-questions/
